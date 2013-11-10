@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  EventCell.h
 //  MedAppJam
 //
 //  Created by Nealon Young on 11/8/13.
@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
+@interface EventCell : UITableViewCell
 
-@interface ViewController : UIViewController
+@property Event *event;
 
 @end

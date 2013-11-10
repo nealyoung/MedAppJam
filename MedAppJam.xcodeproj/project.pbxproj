@@ -13,14 +13,17 @@
 		0E08DF2E182DD96A004CF9E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E08DF2C182DD96A004CF9E4 /* InfoPlist.strings */; };
 		0E08DF30182DD96A004CF9E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E08DF2F182DD96A004CF9E4 /* main.m */; };
 		0E08DF34182DD96A004CF9E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E08DF33182DD96A004CF9E4 /* AppDelegate.m */; };
-		0E08DF37182DD96A004CF9E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E08DF35182DD96A004CF9E4 /* Main.storyboard */; };
-		0E08DF3A182DD96A004CF9E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E08DF39182DD96A004CF9E4 /* ViewController.m */; };
 		0E08DF3C182DD96A004CF9E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E08DF3B182DD96A004CF9E4 /* Images.xcassets */; };
 		0E08DF43182DD96A004CF9E4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E08DF42182DD96A004CF9E4 /* XCTest.framework */; };
 		0E08DF44182DD96A004CF9E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E08DF23182DD96A004CF9E4 /* Foundation.framework */; };
 		0E08DF45182DD96A004CF9E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E08DF27182DD96A004CF9E4 /* UIKit.framework */; };
 		0E08DF4D182DD96B004CF9E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E08DF4B182DD96B004CF9E4 /* InfoPlist.strings */; };
 		0E08DF4F182DD96B004CF9E4 /* MedAppJamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E08DF4E182DD96B004CF9E4 /* MedAppJamTests.m */; };
+		0E9466D9182F0DEE00F28FFE /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9466D8182F0DEE00F28FFE /* Event.m */; };
+		0E9466DC182F0EC200F28FFE /* ChemoEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9466DB182F0EC200F28FFE /* ChemoEvent.m */; };
+		0E9466DF182F115200F28FFE /* LabTestEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9466DE182F115200F28FFE /* LabTestEvent.m */; };
+		0EFCCB87182E208600A89CBC /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCCB86182E208600A89CBC /* EventsViewController.m */; };
+		0EFCCB8A182E212500A89CBC /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCCB89182E212500A89CBC /* EventCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +47,22 @@
 		0E08DF31182DD96A004CF9E4 /* MedAppJam-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MedAppJam-Prefix.pch"; sourceTree = "<group>"; };
 		0E08DF32182DD96A004CF9E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E08DF33182DD96A004CF9E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0E08DF36182DD96A004CF9E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0E08DF38182DD96A004CF9E4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0E08DF39182DD96A004CF9E4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0E08DF3B182DD96A004CF9E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E08DF41182DD96A004CF9E4 /* MedAppJamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedAppJamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E08DF42182DD96A004CF9E4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0E08DF4A182DD96B004CF9E4 /* MedAppJamTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MedAppJamTests-Info.plist"; sourceTree = "<group>"; };
 		0E08DF4C182DD96B004CF9E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0E08DF4E182DD96B004CF9E4 /* MedAppJamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MedAppJamTests.m; sourceTree = "<group>"; };
+		0E9466D7182F0DEE00F28FFE /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Classes/Event.h; sourceTree = "<group>"; };
+		0E9466D8182F0DEE00F28FFE /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Classes/Event.m; sourceTree = "<group>"; };
+		0E9466DA182F0EC200F28FFE /* ChemoEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChemoEvent.h; path = Classes/ChemoEvent.h; sourceTree = "<group>"; };
+		0E9466DB182F0EC200F28FFE /* ChemoEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChemoEvent.m; path = Classes/ChemoEvent.m; sourceTree = "<group>"; };
+		0E9466DD182F115200F28FFE /* LabTestEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabTestEvent.h; path = Classes/LabTestEvent.h; sourceTree = "<group>"; };
+		0E9466DE182F115200F28FFE /* LabTestEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabTestEvent.m; path = Classes/LabTestEvent.m; sourceTree = "<group>"; };
+		0EFCCB85182E208600A89CBC /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventsViewController.h; path = "View Controllers/EventsViewController.h"; sourceTree = "<group>"; };
+		0EFCCB86182E208600A89CBC /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventsViewController.m; path = "View Controllers/EventsViewController.m"; sourceTree = "<group>"; };
+		0EFCCB88182E212500A89CBC /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventCell.h; path = "Table View Cells/EventCell.h"; sourceTree = "<group>"; };
+		0EFCCB89182E212500A89CBC /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventCell.m; path = "Table View Cells/EventCell.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +124,16 @@
 			children = (
 				0E08DF32182DD96A004CF9E4 /* AppDelegate.h */,
 				0E08DF33182DD96A004CF9E4 /* AppDelegate.m */,
-				0E08DF35182DD96A004CF9E4 /* Main.storyboard */,
-				0E08DF38182DD96A004CF9E4 /* ViewController.h */,
-				0E08DF39182DD96A004CF9E4 /* ViewController.m */,
+				0E9466D7182F0DEE00F28FFE /* Event.h */,
+				0E9466D8182F0DEE00F28FFE /* Event.m */,
+				0E9466DA182F0EC200F28FFE /* ChemoEvent.h */,
+				0E9466DB182F0EC200F28FFE /* ChemoEvent.m */,
+				0E9466DD182F115200F28FFE /* LabTestEvent.h */,
+				0E9466DE182F115200F28FFE /* LabTestEvent.m */,
+				0EFCCB88182E212500A89CBC /* EventCell.h */,
+				0EFCCB89182E212500A89CBC /* EventCell.m */,
+				0EFCCB85182E208600A89CBC /* EventsViewController.h */,
+				0EFCCB86182E208600A89CBC /* EventsViewController.m */,
 				0E08DF3B182DD96A004CF9E4 /* Images.xcassets */,
 				0E08DF2A182DD96A004CF9E4 /* Supporting Files */,
 			);
@@ -230,7 +247,6 @@
 			files = (
 				0E08DF3C182DD96A004CF9E4 /* Images.xcassets in Resources */,
 				0E08DF2E182DD96A004CF9E4 /* InfoPlist.strings in Resources */,
-				0E08DF37182DD96A004CF9E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E08DF3A182DD96A004CF9E4 /* ViewController.m in Sources */,
+				0EFCCB8A182E212500A89CBC /* EventCell.m in Sources */,
+				0E9466DC182F0EC200F28FFE /* ChemoEvent.m in Sources */,
+				0E9466DF182F115200F28FFE /* LabTestEvent.m in Sources */,
+				0EFCCB87182E208600A89CBC /* EventsViewController.m in Sources */,
+				0E9466D9182F0DEE00F28FFE /* Event.m in Sources */,
 				0E08DF34182DD96A004CF9E4 /* AppDelegate.m in Sources */,
 				0E08DF30182DD96A004CF9E4 /* main.m in Sources */,
 			);
@@ -280,14 +300,6 @@
 				0E08DF2D182DD96A004CF9E4 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0E08DF35182DD96A004CF9E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E08DF36182DD96A004CF9E4 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		0E08DF4B182DD96B004CF9E4 /* InfoPlist.strings */ = {
@@ -460,6 +472,7 @@
 				0E08DF54182DD96B004CF9E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E08DF55182DD96B004CF9E4 /* Build configuration list for PBXNativeTarget "MedAppJamTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +481,7 @@
 				0E08DF57182DD96B004CF9E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
