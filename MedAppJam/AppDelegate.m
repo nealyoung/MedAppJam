@@ -9,12 +9,28 @@
 #import "AppDelegate.h"
 
 #import "EventsViewController.h"
+#import "UIFont+Application.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.tintColor = [UIColor whiteColor];
+    
+    [[UILabel appearance] setFont:[UIFont applicationFontOfSize:16.0f]];
+    
+    NSDictionary *barButtonTitleTextAttributes = @{NSFontAttributeName : [UIFont mediumApplicationFontOfSize:16.0f],
+                                                   NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [[UIBarButtonItem appearance] setTitleTextAttributes:barButtonTitleTextAttributes forState:UIControlStateNormal];
+    
+    NSDictionary *navBarTitleTextAttributes = @{NSFontAttributeName: [UIFont boldApplicationFontOfSize:19.0f],
+                                                NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0xED/255.0 green:0x7A/255.0 blue:0x5D/255.0 alpha:1.0f]];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     EventsViewController *eventsViewController = [[EventsViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:eventsViewController];

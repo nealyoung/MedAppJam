@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZBarSDK.h"
 
-@interface EventsViewController : UITableViewController
+@interface EventsViewController : UITableViewController <ZBarReaderDelegate>
+
+@property UIBarButtonItem *addEventButton;
 
 @end

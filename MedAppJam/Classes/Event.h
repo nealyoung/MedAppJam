@@ -10,4 +10,8 @@
 
 @interface Event : NSObject
 
+@property NSString *procedureName;
+@property NSString *location;
+@property NSDate *dateTime;
+
 @end

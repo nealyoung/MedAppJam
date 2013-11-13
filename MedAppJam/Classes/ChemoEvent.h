@@ -10,7 +10,6 @@
 
 @interface ChemoEvent : Event
 
-@property NSString *procedureName;
 @property NSString *timeline;
 @property NSString *mechanism;
 @property NSString *sideEffects;

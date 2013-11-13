@@ -10,4 +10,9 @@
 
 @interface LabTestEvent : Event
 
+@property NSString *information;
+@property NSString *howTested;
+@property NSString *values;
+@property NSString *interpretation;
+
 @end

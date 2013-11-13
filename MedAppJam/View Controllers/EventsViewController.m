@@ -8,9 +8,12 @@
 
 #import "EventsViewController.h"
 
+
 @interface EventsViewController ()
 
 @property NSArray *events;
+
+- (void)addEvent;
 
 @end
 
@@ -26,6 +29,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"My Treatment Plan";
+    
+    self.addEventButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
+    self.navigationItem.rightBarButtonItem = self.addEventButton;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,6 +47,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+- (void)readerView:(ZBarReaderView *)view didReadSymbols: (ZBarSymbolSet *)syms fromImage:(UIImage *)img {
+    for(ZBarSymbol *sym in syms)
+    {
+        NSLog(@"Did read symbols: %@", sym.data);
+        
+    }
+}
+*/
+
+- (void)addEvent {
+    ZBarReaderViewController *codeReader = [ZBarReaderViewController new];
+    codeReader.readerDelegate = self;
+    codeReader.tracksSymbols = YES;
+    codeReader.supportedOrientationsMask = ZBarOrientationMaskAll;
+    
+    ZBarImageScanner *scanner = codeReader.scanner;
+    [scanner setSymbology: ZBAR_I25 config: ZBAR_CFG_ENABLE to: 0];
+    
+    [self presentViewController:codeReader animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController*)reader didFinishPickingMediaWithInfo:(NSDictionary*)info {
+    id<NSFastEnumeration> results = info[ZBarReaderControllerResults];
+    ZBarSymbol *symbol = nil;
+    
+    for(symbol in results) {
+        break;
+    }
+    
+    NSLog(@"%@", symbol.data);
+    
+    //resultImageView.image = [info objectForKey: UIImagePickerControllerOriginalImage];
+    [reader dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -49,8 +93,7 @@
     return [self.events count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
