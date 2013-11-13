@@ -10,7 +10,10 @@
 
 @interface SurgeryEvent : Event
 
-@property NSString *imageName;
++ (SurgeryEvent *)sampleEvent;
+
+@property NSString *information;
 @property NSString *preparation;
+@property NSString *recovery;
 
 @end

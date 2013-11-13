@@ -10,6 +10,8 @@
 
 @interface ChemoEvent : Event
 
++ (ChemoEvent *)sampleEvent;
+
 @property NSString *timeline;
 @property NSString *mechanism;
 @property NSString *sideEffects;

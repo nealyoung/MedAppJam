@@ -22,6 +22,10 @@
     return [UIFont fontWithName:@"AvenirNextCondensed-DemiBoldItalic" size:size];
 }
 
++ (UIFont *)italicApplicationFontOfSize:(CGFloat)size {
+    return [UIFont fontWithName:@"AvenirNext-Italic" size:size];
+}
+
 + (UIFont *)mediumApplicationFontOfSize:(CGFloat)size {
     return [UIFont fontWithName:@"AvenirNext-Medium" size:size];
 }

@@ -11,7 +11,13 @@
 @interface EventCell : UITableViewCell
 
 @property Event *event;
+
+@property UIImageView *locationIconView;
 @property UIImageView *iconImageView;
+
+@property UILabel *eventTypeLabel;
 @property UILabel *procedureNameLabel;
+@property UILabel *locationLabel;
+@property UILabel *timeLabel;
 
 @end

@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, EventType) {
+    EventTypeChemo,
+    EventTypeLabTest,
+    EventTypeSurgery
+};
+
 @interface Event : NSObject
 
+@property EventType eventType;
 @property NSString *procedureName;
 @property NSString *location;
 @property NSDate *dateTime;

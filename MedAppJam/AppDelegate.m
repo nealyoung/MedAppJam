@@ -28,7 +28,9 @@
                                                 NSForegroundColorAttributeName: [UIColor whiteColor]};
     [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0xED/255.0 green:0x7A/255.0 blue:0x5D/255.0 alpha:1.0f]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0xDD/255.0 green:0x6A/255.0 blue:0x4D/255.0 alpha:1.0f]];
+    
+    [[UIToolbar appearance] setBarTintColor:[UIColor colorWithRed:0xDD/255.0 green:0x6A/255.0 blue:0x4D/255.0 alpha:1.0f]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     

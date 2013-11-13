@@ -13,6 +13,7 @@
 + (UIFont *)applicationFontOfSize:(CGFloat)size;
 + (UIFont *)boldApplicationFontOfSize:(CGFloat)size;
 + (UIFont *)boldItalicApplicationFontOfSize:(CGFloat)size;
++ (UIFont *)italicApplicationFontOfSize:(CGFloat)size;
 + (UIFont *)mediumApplicationFontOfSize:(CGFloat)size;
 
 @end

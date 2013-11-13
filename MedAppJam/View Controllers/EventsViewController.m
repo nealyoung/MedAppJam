@@ -8,6 +8,13 @@
 
 #import "EventsViewController.h"
 
+#import "CodeReaderViewController.h"
+#import "ChemoEvent.h"
+#import "Event.h"
+#import "EventCell.h"
+#import "LabTestEvent.h"
+#import "SurgeryEvent.h"
+#import "SORelativeDateTransformer.h"
 
 @interface EventsViewController ()
 
@@ -21,9 +28,12 @@
 
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
+    
     if (self) {
-        // Custom initialization
+        self.events = @[[LabTestEvent sampleEvent], [ChemoEvent sampleEvent], [SurgeryEvent sampleEvent]];
+        self.tableView.separatorInset = UIEdgeInsetsMake(0.0f, 70.0f, 0.0f, 0.0f);
     }
+    
     return self;
 }
 
@@ -32,14 +42,16 @@
     
     self.navigationItem.title = @"My Treatment Plan";
     
-    self.addEventButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
-    self.navigationItem.rightBarButtonItem = self.addEventButton;
+    UIBarButtonItem *addEventButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
+    self.navigationItem.rightBarButtonItem = addEventButton;
+    
+    self.tableView.backgroundColor = [UIColor colorWithRed:0xF7/255.0f green:0xF7/255.0f blue:0xF7/255.0f alpha:1.0f];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,40 +59,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-- (void)readerView:(ZBarReaderView *)view didReadSymbols: (ZBarSymbolSet *)syms fromImage:(UIImage *)img {
-    for(ZBarSymbol *sym in syms)
-    {
-        NSLog(@"Did read symbols: %@", sym.data);
-        
-    }
-}
-*/
-
 - (void)addEvent {
-    ZBarReaderViewController *codeReader = [ZBarReaderViewController new];
-    codeReader.readerDelegate = self;
-    codeReader.tracksSymbols = YES;
-    codeReader.supportedOrientationsMask = ZBarOrientationMaskAll;
-    
-    ZBarImageScanner *scanner = codeReader.scanner;
-    [scanner setSymbology: ZBAR_I25 config: ZBAR_CFG_ENABLE to: 0];
+    CodeReaderViewController *codeReader = [[CodeReaderViewController alloc] init];
+    codeReader.readerView.readerDelegate = self;
     
     [self presentViewController:codeReader animated:YES completion:nil];
-}
-
-- (void)imagePickerController:(UIImagePickerController*)reader didFinishPickingMediaWithInfo:(NSDictionary*)info {
-    id<NSFastEnumeration> results = info[ZBarReaderControllerResults];
-    ZBarSymbol *symbol = nil;
-    
-    for(symbol in results) {
-        break;
-    }
-    
-    NSLog(@"%@", symbol.data);
-    
-    //resultImageView.image = [info objectForKey: UIImagePickerControllerOriginalImage];
-    [reader dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource
@@ -95,11 +78,55 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    EventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[EventCell alloc] init];
+    }
+    
+    Event *event = self.events[indexPath.row];
+    
+    if (event.eventType == EventTypeChemo) {
+        cell.eventTypeLabel.text = @"Chemotherapy";
+        cell.iconImageView.image = [UIImage imageNamed:@"chemo_icon.png"];
+    } else if (event.eventType == EventTypeLabTest) {
+        cell.eventTypeLabel.text = @"Lab Test";
+        cell.iconImageView.image = [UIImage imageNamed:@"lab_test_icon.png"];
+    } else if (event.eventType == EventTypeSurgery) {
+        cell.eventTypeLabel.text = @"Surgery";
+        cell.iconImageView.image = [UIImage imageNamed:@"surgery_icon.png"];
+    }
+    
+    cell.procedureNameLabel.text = event.procedureName;
+    
+    // We need to get the first line of the address to display on the main page
+    NSRange firstLineRange = [event.location rangeOfString:@"\n"];
+    
+    if (firstLineRange.location != NSNotFound) {
+        cell.locationLabel.text = [event.location substringToIndex:firstLineRange.location];
+    } else {
+        cell.locationLabel.text = event.location;
+    }
+    
+    SORelativeDateTransformer *dateTransformer = [[SORelativeDateTransformer alloc] init];
+    cell.timeLabel.text = [dateTransformer transformedValue:event.dateTime];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70.0f;
+}
+
+#pragma mark - ZBarReaderViewDelegate
+
+- (void)readerView:(ZBarReaderView *)readerView didReadSymbols:(ZBarSymbolSet * )symbols fromImage:(UIImage *)image {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    for (ZBarSymbol *symbol in symbols) {
+        NSLog(@"%@", symbol.data);
+        break;
+    }
 }
 
 /*
@@ -124,33 +151,5 @@
     }   
 }
 */
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end
