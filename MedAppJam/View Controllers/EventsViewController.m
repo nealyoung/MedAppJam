@@ -12,7 +12,9 @@
 #import "ChemoEvent.h"
 #import "Event.h"
 #import "EventCell.h"
+#import "EventViewController.h"
 #import "LabTestEvent.h"
+#import "LabTestEventDataSource.h"
 #import "SurgeryEvent.h"
 #import "SORelativeDateTransformer.h"
 
@@ -32,6 +34,7 @@
     if (self) {
         self.events = @[[LabTestEvent sampleEvent], [ChemoEvent sampleEvent], [SurgeryEvent sampleEvent]];
         self.tableView.separatorInset = UIEdgeInsetsMake(0.0f, 70.0f, 0.0f, 0.0f);
+        self.tableView.backgroundColor = [UIColor colorWithRed:0xF7/255.0f green:0xF7/255.0f blue:0xF7/255.0f alpha:1.0f];
     }
     
     return self;
@@ -44,8 +47,6 @@
     
     UIBarButtonItem *addEventButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
     self.navigationItem.rightBarButtonItem = addEventButton;
-    
-    self.tableView.backgroundColor = [UIColor colorWithRed:0xF7/255.0f green:0xF7/255.0f blue:0xF7/255.0f alpha:1.0f];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -116,6 +117,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70.0f;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EventViewController *eventViewController = [[EventViewController alloc] initWithEvent:self.events[indexPath.row]];
+    [self.navigationController pushViewController:eventViewController animated:YES];
 }
 
 #pragma mark - ZBarReaderViewDelegate

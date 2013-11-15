@@ -14,12 +14,12 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         
         self.eventTypeLabel = [[UILabel alloc] init];
         self.eventTypeLabel.font = [UIFont mediumApplicationFontOfSize:16.0f];
-        self.eventTypeLabel.text = @"Lab Test";
         [self.contentView addSubview:self.eventTypeLabel];
         
         self.timeLabel = [[UILabel alloc] init];

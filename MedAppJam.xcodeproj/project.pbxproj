@@ -20,6 +20,11 @@
 		0E08DF4D182DD96B004CF9E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E08DF4B182DD96B004CF9E4 /* InfoPlist.strings */; };
 		0E08DF4F182DD96B004CF9E4 /* MedAppJamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E08DF4E182DD96B004CF9E4 /* MedAppJamTests.m */; };
 		0E50CE32183352C400892C1B /* CodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E50CE31183352C400892C1B /* CodeReaderViewController.m */; };
+		0E50CE37183366CC00892C1B /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E50CE36183366CC00892C1B /* EventViewController.m */; };
+		0E50CE3E1834024700892C1B /* AppointmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E50CE3D1834024700892C1B /* AppointmentCell.m */; };
+		0E50CE401834059400892C1B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E50CE3F1834059400892C1B /* MapKit.framework */; };
+		0E50CE4318340FE800892C1B /* PinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E50CE4218340FE800892C1B /* PinAnnotation.m */; };
+		0E50CE461834AA3600892C1B /* InformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E50CE451834AA3600892C1B /* InformationCell.m */; };
 		0E9466D9182F0DEE00F28FFE /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9466D8182F0DEE00F28FFE /* Event.m */; };
 		0E9466DC182F0EC200F28FFE /* ChemoEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9466DB182F0EC200F28FFE /* ChemoEvent.m */; };
 		0E9466DF182F115200F28FFE /* LabTestEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9466DE182F115200F28FFE /* LabTestEvent.m */; };
@@ -41,7 +46,7 @@
 		0E94E5941833309D00C0434E /* SORelativeDateTransformer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E94E5911833309D00C0434E /* SORelativeDateTransformer.bundle */; };
 		0E94E5951833309D00C0434E /* SORelativeDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E94E5931833309D00C0434E /* SORelativeDateTransformer.m */; };
 		0E94E59B1833375800C0434E /* surgery_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E94E59A1833375800C0434E /* surgery_icon@2x.png */; };
-		0E94E59D1833450800C0434E /* chemo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E94E59C1833450800C0434E /* chemo_icon@2x.png */; };
+		0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */; };
 		0EFCCB87182E208600A89CBC /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCCB86182E208600A89CBC /* EventsViewController.m */; };
 		0EFCCB8A182E212500A89CBC /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCCB89182E212500A89CBC /* EventCell.m */; };
 /* End PBXBuildFile section */
@@ -75,6 +80,15 @@
 		0E08DF4E182DD96B004CF9E4 /* MedAppJamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MedAppJamTests.m; sourceTree = "<group>"; };
 		0E50CE30183352C400892C1B /* CodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeReaderViewController.h; path = "View Controllers/CodeReaderViewController.h"; sourceTree = "<group>"; };
 		0E50CE31183352C400892C1B /* CodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeReaderViewController.m; path = "View Controllers/CodeReaderViewController.m"; sourceTree = "<group>"; };
+		0E50CE35183366CC00892C1B /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventViewController.h; path = "View Controllers/EventViewController.h"; sourceTree = "<group>"; };
+		0E50CE36183366CC00892C1B /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventViewController.m; path = "View Controllers/EventViewController.m"; sourceTree = "<group>"; };
+		0E50CE3C1834024700892C1B /* AppointmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppointmentCell.h; path = "Table View Cells/AppointmentCell.h"; sourceTree = "<group>"; };
+		0E50CE3D1834024700892C1B /* AppointmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppointmentCell.m; path = "Table View Cells/AppointmentCell.m"; sourceTree = "<group>"; };
+		0E50CE3F1834059400892C1B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0E50CE4118340FE800892C1B /* PinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinAnnotation.h; path = Classes/PinAnnotation.h; sourceTree = "<group>"; };
+		0E50CE4218340FE800892C1B /* PinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinAnnotation.m; path = Classes/PinAnnotation.m; sourceTree = "<group>"; };
+		0E50CE441834AA3600892C1B /* InformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationCell.h; path = "Table View Cells/InformationCell.h"; sourceTree = "<group>"; };
+		0E50CE451834AA3600892C1B /* InformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InformationCell.m; path = "Table View Cells/InformationCell.m"; sourceTree = "<group>"; };
 		0E9466D7182F0DEE00F28FFE /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Classes/Event.h; sourceTree = "<group>"; };
 		0E9466D8182F0DEE00F28FFE /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Classes/Event.m; sourceTree = "<group>"; };
 		0E9466DA182F0EC200F28FFE /* ChemoEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChemoEvent.h; path = Classes/ChemoEvent.h; sourceTree = "<group>"; };
@@ -122,7 +136,7 @@
 		0E94E5921833309D00C0434E /* SORelativeDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SORelativeDateTransformer.h; sourceTree = "<group>"; };
 		0E94E5931833309D00C0434E /* SORelativeDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SORelativeDateTransformer.m; sourceTree = "<group>"; };
 		0E94E59A1833375800C0434E /* surgery_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surgery_icon@2x.png"; sourceTree = "<group>"; };
-		0E94E59C1833450800C0434E /* chemo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chemo_icon@2x.png"; sourceTree = "<group>"; };
+		0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chemo_icon@2x.png"; sourceTree = "<group>"; };
 		0EFCCB85182E208600A89CBC /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventsViewController.h; path = "View Controllers/EventsViewController.h"; sourceTree = "<group>"; };
 		0EFCCB86182E208600A89CBC /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventsViewController.m; path = "View Controllers/EventsViewController.m"; sourceTree = "<group>"; };
 		0EFCCB88182E212500A89CBC /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventCell.h; path = "Table View Cells/EventCell.h"; sourceTree = "<group>"; };
@@ -134,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E50CE401834059400892C1B /* MapKit.framework in Frameworks */,
 				0E94E5851833060800C0434E /* libiconv.dylib in Frameworks */,
 				0E94E583183305FE00C0434E /* QuartzCore.framework in Frameworks */,
 				0E94E581183305F700C0434E /* CoreVideo.framework in Frameworks */,
@@ -183,6 +198,7 @@
 		0E08DF22182DD96A004CF9E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E50CE3F1834059400892C1B /* MapKit.framework */,
 				0E94E5841833060800C0434E /* libiconv.dylib */,
 				0E94E582183305FE00C0434E /* QuartzCore.framework */,
 				0E94E580183305F700C0434E /* CoreVideo.framework */,
@@ -202,8 +218,7 @@
 			children = (
 				0E08DF32182DD96A004CF9E4 /* AppDelegate.h */,
 				0E08DF33182DD96A004CF9E4 /* AppDelegate.m */,
-				0EFCCB88182E212500A89CBC /* EventCell.h */,
-				0EFCCB89182E212500A89CBC /* EventCell.m */,
+				0E50CE3B1833FFDE00892C1B /* Table View Cells */,
 				0E9466E7182F650100F28FFE /* Class Extensions */,
 				0E9466E6182F64FA00F28FFE /* Classes */,
 				0E50CE331833585500892C1B /* View Controllers */,
@@ -250,6 +265,8 @@
 				0EFCCB86182E208600A89CBC /* EventsViewController.m */,
 				0E50CE30183352C400892C1B /* CodeReaderViewController.h */,
 				0E50CE31183352C400892C1B /* CodeReaderViewController.m */,
+				0E50CE35183366CC00892C1B /* EventViewController.h */,
+				0E50CE36183366CC00892C1B /* EventViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -257,7 +274,7 @@
 		0E50CE341833586600892C1B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0E94E59C1833450800C0434E /* chemo_icon@2x.png */,
+				0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */,
 				0E94E58B18330EB700C0434E /* lab_test_icon@2x.png */,
 				0E94E59A1833375800C0434E /* surgery_icon@2x.png */,
 				0E94E58D183311AE00C0434E /* location@2x.png */,
@@ -265,9 +282,24 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		0E50CE3B1833FFDE00892C1B /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0E50CE3C1834024700892C1B /* AppointmentCell.h */,
+				0E50CE3D1834024700892C1B /* AppointmentCell.m */,
+				0EFCCB88182E212500A89CBC /* EventCell.h */,
+				0EFCCB89182E212500A89CBC /* EventCell.m */,
+				0E50CE441834AA3600892C1B /* InformationCell.h */,
+				0E50CE451834AA3600892C1B /* InformationCell.m */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		0E9466E6182F64FA00F28FFE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0E50CE4118340FE800892C1B /* PinAnnotation.h */,
+				0E50CE4218340FE800892C1B /* PinAnnotation.m */,
 				0E9466D7182F0DEE00F28FFE /* Event.h */,
 				0E9466D8182F0DEE00F28FFE /* Event.m */,
 				0E9466DA182F0EC200F28FFE /* ChemoEvent.h */,
@@ -451,7 +483,7 @@
 				0E94E58F183311AE00C0434E /* location@2x.png in Resources */,
 				0E94E59B1833375800C0434E /* surgery_icon@2x.png in Resources */,
 				0E94E5941833309D00C0434E /* SORelativeDateTransformer.bundle in Resources */,
-				0E94E59D1833450800C0434E /* chemo_icon@2x.png in Resources */,
+				0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */,
 				0E94E58C18330EB700C0434E /* lab_test_icon@2x.png in Resources */,
 				0E94E5781833057C00C0434E /* zbar-helpicons.png in Resources */,
 				0E08DF3C182DD96A004CF9E4 /* Images.xcassets in Resources */,
@@ -477,7 +509,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E50CE3E1834024700892C1B /* AppointmentCell.m in Sources */,
+				0E50CE461834AA3600892C1B /* InformationCell.m in Sources */,
 				0EFCCB8A182E212500A89CBC /* EventCell.m in Sources */,
+				0E50CE4318340FE800892C1B /* PinAnnotation.m in Sources */,
 				0E50CE32183352C400892C1B /* CodeReaderViewController.m in Sources */,
 				0E94E5951833309D00C0434E /* SORelativeDateTransformer.m in Sources */,
 				0E9466DC182F0EC200F28FFE /* ChemoEvent.m in Sources */,
@@ -486,6 +521,7 @@
 				0EFCCB87182E208600A89CBC /* EventsViewController.m in Sources */,
 				0E9466D9182F0DEE00F28FFE /* Event.m in Sources */,
 				0E08DF34182DD96A004CF9E4 /* AppDelegate.m in Sources */,
+				0E50CE37183366CC00892C1B /* EventViewController.m in Sources */,
 				0E9466EA182F6C0E00F28FFE /* SurgeryEvent.m in Sources */,
 				0E08DF30182DD96A004CF9E4 /* main.m in Sources */,
 			);

@@ -23,7 +23,7 @@
     
     if (self) {
         ZBarImageScanner *imageScanner = [[ZBarImageScanner alloc] init];
-        [imageScanner setSymbology: ZBAR_I25 config: ZBAR_CFG_ENABLE to: 0];
+        [imageScanner setSymbology:ZBAR_I25 config:ZBAR_CFG_ENABLE to:0];
         self.readerView = [[ZBarReaderView alloc] initWithImageScanner:imageScanner];
         self.readerView.tracksSymbols = YES;
         self.readerView.frame = [UIScreen mainScreen].bounds;
@@ -36,18 +36,22 @@
         UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
         [toolbar setItems:@[cancelButton] animated:NO];
         [self.view addSubview:toolbar];
+
+        UIView *labelBackground = [[UIView alloc] initWithFrame:CGRectMake(30.0f, 20.0f, 260.0f, 60.0f)];
+        labelBackground.backgroundColor = [UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.8f];
         
-        UILabel *instructionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40.0f, 20.0f, 240.0f, 40.0f)];
-        instructionLabel.backgroundColor = [UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.8f];
-        instructionLabel.text = @"Scan a barcode";
+        // Round the corners of the label background
+        CALayer *thumbnailLayer = [labelBackground layer];
+        [thumbnailLayer setMasksToBounds:YES];
+        [thumbnailLayer setCornerRadius:5.0f];
+        [self.view addSubview:labelBackground];
+        
+        UILabel *instructionLabel = [[UILabel alloc] initWithFrame:CGRectMake(40.0f, 20.0f, 240.0f, 60.0f)];
+        instructionLabel.numberOfLines = 2;
+        instructionLabel.text = @"Scan the barcode shown to you by your health provider";
         instructionLabel.textColor = [UIColor whiteColor];
         instructionLabel.font = [UIFont mediumApplicationFontOfSize:16.0f];
         instructionLabel.textAlignment = NSTextAlignmentCenter;
-        
-        // Round the corners of the label
-        CALayer *thumbnailLayer = [instructionLabel layer];
-        [thumbnailLayer setMasksToBounds:YES];
-        [thumbnailLayer setCornerRadius:5.0f];
         [self.view addSubview:instructionLabel];
     }
     

@@ -11,6 +11,12 @@
 #import "EventsViewController.h"
 #import "UIFont+Application.h"
 
+@interface AppDelegate ()
+
+- (void)customizeAppearance;
+
+@end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,6 +24,18 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.tintColor = [UIColor whiteColor];
     
+    [self customizeAppearance];
+    
+    EventsViewController *eventsViewController = [[EventsViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:eventsViewController];
+    
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+}
+
+- (void)customizeAppearance {
     [[UILabel appearance] setFont:[UIFont applicationFontOfSize:16.0f]];
     
     NSDictionary *barButtonTitleTextAttributes = @{NSFontAttributeName : [UIFont mediumApplicationFontOfSize:16.0f],
@@ -33,15 +51,8 @@
     [[UIToolbar appearance] setBarTintColor:[UIColor colorWithRed:0xDD/255.0 green:0x6A/255.0 blue:0x4D/255.0 alpha:1.0f]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    EventsViewController *eventsViewController = [[EventsViewController alloc] initWithStyle:UITableViewStylePlain];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:eventsViewController];
-    
-    self.window.rootViewController = navigationController;
-    [self.window makeKeyAndVisible];
-    return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
