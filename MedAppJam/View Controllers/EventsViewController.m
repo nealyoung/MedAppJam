@@ -14,7 +14,6 @@
 #import "EventCell.h"
 #import "EventViewController.h"
 #import "LabTestEvent.h"
-#import "LabTestEventDataSource.h"
 #import "SurgeryEvent.h"
 #import "SORelativeDateTransformer.h"
 

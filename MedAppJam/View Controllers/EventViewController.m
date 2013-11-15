@@ -12,6 +12,7 @@
 #import "ChemoEvent.h"
 #import "InformationCell.h"
 #import "LabTestEvent.h"
+#import "PopoverView.h"
 #import "SurgeryEvent.h"
 #import "UIFont+Application.h"
 
@@ -21,6 +22,7 @@
 
 - (AppointmentCell *)appointmentCellForTableView:(UITableView *)tableView;
 - (InformationCell *)informationCellForTableView:(UITableView *)tableView;
+- (void)indexButtonTapped;
 
 @end
 
@@ -57,6 +59,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *indexButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"hamburger_button.png"]
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(indexButtonTapped)];
+    self.navigationItem.rightBarButtonItem = indexButton;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -90,6 +98,15 @@
     }
     
     return cell;
+}
+
+- (void)indexButtonTapped {
+    NSArray *example = [NSArray arrayWithObjects:@"Information", @"How it's Tested", @"Values", @"Interpretation", nil];
+    [PopoverView showPopoverAtPoint:CGPointMake(305, 40)
+                             inView:self.navigationController.navigationBar
+                          withTitle:@"Jump to Section"
+                    withStringArray:example
+                           delegate:self];
 }
 
 #pragma mark - UITableViewDataSource

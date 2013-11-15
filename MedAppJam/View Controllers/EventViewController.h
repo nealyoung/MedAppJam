@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
+#import "PopoverView.h"
 
-@interface EventViewController : UITableViewController
+@interface EventViewController : UITableViewController <PopoverViewDelegate>
 
 - (id)initWithEvent:(Event *)event;
 

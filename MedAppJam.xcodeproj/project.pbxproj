@@ -46,7 +46,11 @@
 		0E94E5941833309D00C0434E /* SORelativeDateTransformer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E94E5911833309D00C0434E /* SORelativeDateTransformer.bundle */; };
 		0E94E5951833309D00C0434E /* SORelativeDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E94E5931833309D00C0434E /* SORelativeDateTransformer.m */; };
 		0E94E59B1833375800C0434E /* surgery_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E94E59A1833375800C0434E /* surgery_icon@2x.png */; };
+		0EB76D5D1835D02900336ACF /* hamburger_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB76D5B1835D02900336ACF /* hamburger_button.png */; };
+		0EB76D5E1835D02900336ACF /* hamburger_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB76D5C1835D02900336ACF /* hamburger_button@2x.png */; };
+		0EBA529E1835CA040063740D /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EBA529D1835CA040063740D /* Data.plist */; };
 		0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */; };
+		0ECC470E1835A20F00E1AEDD /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC470B1835A20F00E1AEDD /* PopoverView.m */; };
 		0EFCCB87182E208600A89CBC /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCCB86182E208600A89CBC /* EventsViewController.m */; };
 		0EFCCB8A182E212500A89CBC /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCCB89182E212500A89CBC /* EventCell.m */; };
 /* End PBXBuildFile section */
@@ -136,7 +140,14 @@
 		0E94E5921833309D00C0434E /* SORelativeDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SORelativeDateTransformer.h; sourceTree = "<group>"; };
 		0E94E5931833309D00C0434E /* SORelativeDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SORelativeDateTransformer.m; sourceTree = "<group>"; };
 		0E94E59A1833375800C0434E /* surgery_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surgery_icon@2x.png"; sourceTree = "<group>"; };
+		0EB76D5B1835D02900336ACF /* hamburger_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_button.png; sourceTree = "<group>"; };
+		0EB76D5C1835D02900336ACF /* hamburger_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hamburger_button@2x.png"; sourceTree = "<group>"; };
+		0EBA529D1835CA040063740D /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Data.plist; path = MedAppJam/Data.plist; sourceTree = "<group>"; };
 		0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chemo_icon@2x.png"; sourceTree = "<group>"; };
+		0ECC470A1835A20F00E1AEDD /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
+		0ECC470B1835A20F00E1AEDD /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
+		0ECC470C1835A20F00E1AEDD /* PopoverView_Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView_Configuration.h; sourceTree = "<group>"; };
+		0ECC470D1835A20F00E1AEDD /* PopoverViewCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCompatibility.h; sourceTree = "<group>"; };
 		0EFCCB85182E208600A89CBC /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventsViewController.h; path = "View Controllers/EventsViewController.h"; sourceTree = "<group>"; };
 		0EFCCB86182E208600A89CBC /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventsViewController.m; path = "View Controllers/EventsViewController.m"; sourceTree = "<group>"; };
 		0EFCCB88182E212500A89CBC /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventCell.h; path = "Table View Cells/EventCell.h"; sourceTree = "<group>"; };
@@ -178,6 +189,7 @@
 		0E08DF17182DD96A004CF9E4 = {
 			isa = PBXGroup;
 			children = (
+				0EBA529D1835CA040063740D /* Data.plist */,
 				0E08DF29182DD96A004CF9E4 /* MedAppJam */,
 				0E94E597183330B500C0434E /* Vendor */,
 				0E08DF48182DD96B004CF9E4 /* MedAppJamTests */,
@@ -274,6 +286,8 @@
 		0E50CE341833586600892C1B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0EB76D5B1835D02900336ACF /* hamburger_button.png */,
+				0EB76D5C1835D02900336ACF /* hamburger_button@2x.png */,
 				0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */,
 				0E94E58B18330EB700C0434E /* lab_test_icon@2x.png */,
 				0E94E59A1833375800C0434E /* surgery_icon@2x.png */,
@@ -398,10 +412,22 @@
 		0E94E597183330B500C0434E /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				0ECC47091835A20F00E1AEDD /* PopoverView */,
 				0E94E596183330A600C0434E /* SORelativeDateTransformer */,
 				0E94E5571833057C00C0434E /* ZBarSDK */,
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		0ECC47091835A20F00E1AEDD /* PopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				0ECC470A1835A20F00E1AEDD /* PopoverView.h */,
+				0ECC470B1835A20F00E1AEDD /* PopoverView.m */,
+				0ECC470C1835A20F00E1AEDD /* PopoverView_Configuration.h */,
+				0ECC470D1835A20F00E1AEDD /* PopoverViewCompatibility.h */,
+			);
+			path = PopoverView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,14 +506,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EB76D5E1835D02900336ACF /* hamburger_button@2x.png in Resources */,
 				0E94E58F183311AE00C0434E /* location@2x.png in Resources */,
 				0E94E59B1833375800C0434E /* surgery_icon@2x.png in Resources */,
 				0E94E5941833309D00C0434E /* SORelativeDateTransformer.bundle in Resources */,
 				0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */,
 				0E94E58C18330EB700C0434E /* lab_test_icon@2x.png in Resources */,
 				0E94E5781833057C00C0434E /* zbar-helpicons.png in Resources */,
+				0EBA529E1835CA040063740D /* Data.plist in Resources */,
 				0E08DF3C182DD96A004CF9E4 /* Images.xcassets in Resources */,
 				0E94E5791833057C00C0434E /* zbar-samples.png in Resources */,
+				0EB76D5D1835D02900336ACF /* hamburger_button.png in Resources */,
 				0E94E5761833057C00C0434E /* zbar-back.png in Resources */,
 				0E94E5771833057C00C0434E /* zbar-help.html in Resources */,
 				0E08DF2E182DD96A004CF9E4 /* InfoPlist.strings in Resources */,
@@ -523,6 +552,7 @@
 				0E08DF34182DD96A004CF9E4 /* AppDelegate.m in Sources */,
 				0E50CE37183366CC00892C1B /* EventViewController.m in Sources */,
 				0E9466EA182F6C0E00F28FFE /* SurgeryEvent.m in Sources */,
+				0ECC470E1835A20F00E1AEDD /* PopoverView.m in Sources */,
 				0E08DF30182DD96A004CF9E4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
