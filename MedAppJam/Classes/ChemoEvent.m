@@ -10,6 +10,30 @@
 
 @implementation ChemoEvent
 
+- (instancetype)initWithCoder:(NSCoder *)decoder {
+    self = [super init];
+    
+    if (self) {
+        self.eventType = [[decoder decodeObjectForKey:@"eventType"] integerValue];
+        self.procedureName = [decoder decodeObjectForKey:@"procedureName"];
+        self.location = [decoder decodeObjectForKey:@"location"];
+        self.timeline = [decoder decodeObjectForKey:@"timeline"];
+        self.mechanism = [decoder decodeObjectForKey:@"mechanism"];
+        self.sideEffects = [decoder decodeObjectForKey:@"sideEffects"];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:[NSNumber numberWithInteger:self.eventType] forKey:@"eventType"];
+    [encoder encodeObject:self.procedureName forKey:@"procedureName"];
+    [encoder encodeObject:self.location forKey:@"location"];
+    [encoder encodeObject:self.timeline forKey:@"timeline"];
+    [encoder encodeObject:self.mechanism forKey:@"mechanism"];
+    [encoder encodeObject:self.sideEffects forKey:@"sideEffects"];
+}
+
 + (ChemoEvent *)sampleEvent {
     ChemoEvent *chemoEvent = [[ChemoEvent alloc] init];
     

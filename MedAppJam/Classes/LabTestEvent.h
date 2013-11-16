@@ -8,7 +8,7 @@
 
 #import "Event.h"
 
-@interface LabTestEvent : Event
+@interface LabTestEvent : Event <NSCoding>
 
 + (LabTestEvent *)sampleEvent;
 

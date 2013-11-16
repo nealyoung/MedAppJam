@@ -8,7 +8,7 @@
 
 #import "Event.h"
 
-@interface ChemoEvent : Event
+@interface ChemoEvent : Event <NSCoding>
 
 + (ChemoEvent *)sampleEvent;
 

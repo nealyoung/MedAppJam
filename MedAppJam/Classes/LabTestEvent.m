@@ -10,6 +10,32 @@
 
 @implementation LabTestEvent
 
+- (instancetype)initWithCoder:(NSCoder *)decoder {
+    self = [super init];
+    
+    if (self) {
+        self.eventType = [[decoder decodeObjectForKey:@"eventType"] integerValue];
+        self.procedureName = [decoder decodeObjectForKey:@"procedureName"];
+        self.location = [decoder decodeObjectForKey:@"location"];
+        self.information = [decoder decodeObjectForKey:@"information"];
+        self.howTested = [decoder decodeObjectForKey:@"howTested"];
+        self.values = [decoder decodeObjectForKey:@"values"];
+        self.interpretation = [decoder decodeObjectForKey:@"interpretation"];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:[NSNumber numberWithInteger:self.eventType] forKey:@"eventType"];
+    [encoder encodeObject:self.procedureName forKey:@"procedureName"];
+    [encoder encodeObject:self.location forKey:@"location"];
+    [encoder encodeObject:self.information forKey:@"information"];
+    [encoder encodeObject:self.howTested forKey:@"howTested"];
+    [encoder encodeObject:self.values forKey:@"values"];
+    [encoder encodeObject:self.interpretation forKey:@"interpretation"];
+}
+
 + (LabTestEvent *)sampleEvent {
     LabTestEvent *labTestEvent = [[LabTestEvent alloc] init];
     

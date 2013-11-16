@@ -104,7 +104,7 @@
     NSArray *example = [NSArray arrayWithObjects:@"Information", @"How it's Tested", @"Values", @"Interpretation", nil];
     [PopoverView showPopoverAtPoint:CGPointMake(305, 40)
                              inView:self.navigationController.navigationBar
-                          withTitle:@"Jump to Section"
+                          withTitle:@"Sections"
                     withStringArray:example
                            delegate:self];
 }

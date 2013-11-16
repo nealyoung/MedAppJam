@@ -19,7 +19,7 @@
 
 @interface EventsViewController ()
 
-@property NSArray *events;
+@property NSMutableArray *events;
 
 - (void)addEvent;
 
@@ -31,7 +31,21 @@
     self = [super initWithStyle:style];
     
     if (self) {
-        self.events = @[[LabTestEvent sampleEvent], [ChemoEvent sampleEvent], [SurgeryEvent sampleEvent]];
+        NSData *eventsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"events"];
+        
+        if (eventsData == nil) {
+            NSLog(@"Created");
+
+            NSArray *sampleEvents = @[[LabTestEvent sampleEvent], [ChemoEvent sampleEvent], [SurgeryEvent sampleEvent]];
+            self.events = [sampleEvents mutableCopy];
+            
+            eventsData = [NSKeyedArchiver archivedDataWithRootObject:self.events];
+            [[NSUserDefaults standardUserDefaults] setObject:eventsData forKey:@"events"];
+        } else {
+            NSLog(@"Loaded");
+            self.events =[NSKeyedUnarchiver unarchiveObjectWithData:eventsData];
+        }
+        
         self.tableView.separatorInset = UIEdgeInsetsMake(0.0f, 70.0f, 0.0f, 0.0f);
         self.tableView.backgroundColor = [UIColor colorWithRed:0xF7/255.0f green:0xF7/255.0f blue:0xF7/255.0f alpha:1.0f];
     }

@@ -8,7 +8,7 @@
 
 #import "Event.h"
 
-@interface SurgeryEvent : Event
+@interface SurgeryEvent : Event <NSCoding>
 
 + (SurgeryEvent *)sampleEvent;
 

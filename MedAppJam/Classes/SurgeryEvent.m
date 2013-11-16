@@ -10,6 +10,30 @@
 
 @implementation SurgeryEvent
 
+- (instancetype)initWithCoder:(NSCoder *)decoder {
+    self = [super init];
+    
+    if (self) {
+        self.eventType = [[decoder decodeObjectForKey:@"eventType"] integerValue];
+        self.procedureName = [decoder decodeObjectForKey:@"procedureName"];
+        self.location = [decoder decodeObjectForKey:@"location"];
+        self.information = [decoder decodeObjectForKey:@"information"];
+        self.preparation = [decoder decodeObjectForKey:@"preparation"];
+        self.recovery = [decoder decodeObjectForKey:@"recovery"];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:[NSNumber numberWithInteger:self.eventType] forKey:@"eventType"];
+    [encoder encodeObject:self.procedureName forKey:@"procedureName"];
+    [encoder encodeObject:self.location forKey:@"location"];
+    [encoder encodeObject:self.information forKey:@"information"];
+    [encoder encodeObject:self.preparation forKey:@"preparation"];
+    [encoder encodeObject:self.recovery forKey:@"recovery"];
+}
+
 + (SurgeryEvent *)sampleEvent {
     SurgeryEvent *surgeryEvent = [[SurgeryEvent alloc] init];
     

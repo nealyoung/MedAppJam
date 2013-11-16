@@ -74,10 +74,10 @@
 #define kDrawTitleGradient YES
 
 //bottom color white value in title gradient bg
-#define kGradientTitleBottomColor [UIColor colorWithRed:1.f green:0.93f blue:0.93f alpha:kBoxAlpha]
+#define kGradientTitleBottomColor [UIColor colorWithRed:0xE0/255.0 green:0x79/255.0 blue:0x60/255.0 alpha:1.0f]
 
 //top color white value in title gradient bg
-#define kGradientTitleTopColor [UIColor colorWithRed:1.f green:1.f blue:1.f alpha:kBoxAlpha]
+#define kGradientTitleTopColor [UIColor colorWithRed:0xE0/255.0 green:0x79/255.0 blue:0x60/255.0 alpha:1.0f]
 
 
 // FONTS
@@ -97,7 +97,7 @@
 #define kTitleFont [UIFont fontWithName:@"AvenirNext-Medium" size:16.f]
 
 //title text color
-#define kTitleColor [UIColor darkGrayColor]
+#define kTitleColor [UIColor whiteColor]
 
 
 // BORDER
