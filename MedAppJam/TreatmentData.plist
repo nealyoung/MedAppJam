@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Chemotherapy</key>
+	<array>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Cyclophosphamide</string>
+			<key>Mechanism</key>
+			<string>Chemicals</string>
+			<key>Timeline</key>
+			<string>1 Day</string>
+			<key>SideEffects</key>
+			<string>Getting sick</string>
+		</dict>
+	</array>
+	<key>Lab Test</key>
+	<array>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Carcinoembryonic Antigen (CEA)</string>
+			<key>Information</key>
+			<string>The carcinoembryonic antigen (CEA) test measures the amount of this protein that may appear in the blood of some people who have certain kinds of cancers, especially large intestine (colon and rectal) cancer. It may also be present in people with cancer of the pancreas, breast, ovary, or lung.</string>
+			<key>HowTested</key>
+			<string>The health professional taking a sample of your blood will:\n\nWrap an elastic band around your upper arm to stop the flow of blood. This makes the veins below the band larger so it is easier to put a needle into the vein.\n\nClean the needle site with alcohol.\n\nPut the needle into the vein. More than one needle stick may be needed.\n\nAttach a tube to the needle to fill it with blood.\n\nRemove the band from your arm when enough blood is collected.\n\nPut a gauze pad or cotton ball over the needle site as the needle is removed.\n\nPut pressure to the site and then put on a bandage.</string>
+			<key>Values</key>
+			<string>Normal: Less than 5 nanograms per milliliter\n\nMany conditions can change your CEA levels. Your doctor will discuss any significant abnormal results with you in relation to your symptoms and medical history.</string>
+			<key>Interpretation</key>
+			<string>High values of CEA can indicate:\n\nCancer of the colon, lung, pancreas, breast, or ovary may be present.\n\nCancer may not be responding to treatment.\n\nCancer may have returned after treatment. A steadily rising CEA may be the first sign that cancer has come back after treatment. Also, people with advanced cancer or cancer that has spread to other parts of the body (metastatic cancer) may have high CEA levels if their original cancer produced this protein before treatment.\n\nAnother condition or disease is present, such as cirrhosis, hepatitis, diverticulitis, inflammatory bowel disease, peptic ulcer disease, chronic obstructive pulmonary disease (COPD), inflammation of the gallbladder (cholecystitis), or an obstructed bile duct.</string>
+		</dict>
+	</array>
+	<key>Surgery</key>
+	<array>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Pneumonectomy</string>
+			<key>Information</key>
+			<string>With a standard pneumonectomy, either the right lung (which contains 3 lobes) or the left lung (containing 2 lobes) is removed.  A pneumonectomy is most commonly done as a treatment for non-small cell lung cancer, when a less invasive procedure, such as a lobectomy, cannot remove the entire tumor. This may occur if the tumor is large, if it has spread beyond a single lobe, or if it is located in the central area of the lungs.  Because a pneumonectomy involves the removal of an entire lung, the procedure is usually reserved for those people who have adequate lung function and will be able to tolerate living with only one lung. That said, many people have gone on to live active lives following a pneumonectomy.</string>
+			<key>Preparation</key>
+			<string>The night before surgery, your doctor will recommend that you “fast” – that is, not eat or drink anything (even water) for at least 8 hours.  On the morning of your surgery, a nurse will ask you several questions and place an IV (intravenous line) in your arm. She will also fit you with monitors so that your blood pressure, heart rate, and oxygen levels can be monitored throughout surgery. Your surgeon will visit to again discuss the procedure and ask you to sign a consent form. The anesthesiologist will also visit to talk about the anesthesia you will be given, and ask about any problems you or your family members have experienced with anesthesia in the past. The operating room staff will guide your family to a waiting area, where the surgical staff can keep them updated on your progress and speak with them when your surgery is done.</string>
+			<key>Recovery</key>
+			<string>When your surgery is complete, you will be taken to the recovery room where you will monitored closely for several hours. In some cases, you may be taken directly to the intensive care unit (ICU). Following recovery, most people spend the first several days in the ICU. For the first day, your breathing may be assisted with a ventilator. Since this can cause some anxiety, you will be given medications that keep you very drowsy until the tube is removed.  When the ventilator is removed and you become less sleepy, a respiratory therapist will ask you to cough, and will assist you in the use of an incentive spirometer. This is a device that you breathe into in order to exercise your lungs, and to help keep the small air sacs in your lungs open.  When you are able, the nursing staff will help you sit, and then encourage you to get up and walk with assistance. You may not feel like being active, but increasing your activity will help you regain your strength more quickly, and reduces the risk of developing blood clots. Most people spend at least 6 to 10 days in the hospital following surgery.  Some people return to work after 8 weeks, but your doctor will give you special restrictions, such as avoiding any heavy lifting. It will also take time for your remaining lung to take over, and shortness of breath may persist for several months following surgery.</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -42,28 +42,27 @@
         self.iconImageView = [[UIImageView alloc] init];
         [self.contentView addSubview:self.iconImageView];
         
-        self.thumbnailContainer = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 90.0f, 20.0f, 80.0f, 80.0f)];
+        self.thumbnailContainer = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 90.0f, 28.0f, 75.0f, 75.0f)];
         self.thumbnailContainer.clipsToBounds = YES;
+        self.thumbnailContainer.layer.borderWidth = 2.0f;
+        self.thumbnailContainer.layer.borderColor = [[UIColor lightGrayColor] CGColor];
         self.thumbnailContainer.layer.cornerRadius = 3;
         [self.contentView addSubview:self.thumbnailContainer];
         
-        CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake(33.7872f, -117.8885f);
-        PinAnnotation *pin = [[PinAnnotation alloc] initWithCoordinates:coordinates title:@"Place"];
-        
-        MKMapView *thumbnailMap = [[MKMapView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 80.0f, 80.0f)];
-        thumbnailMap.userInteractionEnabled = NO;
-        thumbnailMap.centerCoordinate = [pin coordinate];
-        [thumbnailMap addAnnotation:pin];
+        self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 75.0f, 75.0f)];
+        self.mapView.userInteractionEnabled = NO;
+        //self.mapView.centerCoordinate = [pin coordinate];
+        //[self.mapView addAnnotation:pin];
         
         // Remove the 'legal' link
-        [[thumbnailMap.subviews objectAtIndex:1] removeFromSuperview];
+        [[self.mapView.subviews objectAtIndex:1] removeFromSuperview];
         
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(thumbnailMap.centerCoordinate, 600, 600);
-        thumbnailMap.region = region;
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.mapView.centerCoordinate, 600, 600);
+        self.mapView.region = region;
         //thumbnailMap.transform = CGAffineTransformMakeScale(0.75, 0.75);
         // We add 10 pixels on the y coordinate, to center the pin in the view. Moreover it will hide the "legal" label of the map view.
-        thumbnailMap.layer.position = CGPointMake(self.thumbnailContainer.bounds.size.width / 2, self.thumbnailContainer.bounds.size.height / 2 + 10);
-        [self.thumbnailContainer addSubview:thumbnailMap];
+        //self.mapView.layer.position = CGPointMake(self.thumbnailContainer.bounds.size.width / 2, self.thumbnailContainer.bounds.size.height / 2 + 10);
+        [self.thumbnailContainer addSubview:self.mapView];
     }
     
     return self;

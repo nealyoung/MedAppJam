@@ -18,8 +18,6 @@
 
 @interface EventViewController ()
 
-+ (CGSize)sizeOfString:(NSString *)string withFont:(UIFont *)font constrainedToWidth:(CGFloat)width;
-
 - (AppointmentCell *)appointmentCellForTableView:(UITableView *)tableView;
 - (InformationCell *)informationCellForTableView:(UITableView *)tableView;
 - (void)indexButtonTapped;
@@ -34,6 +32,7 @@
     if (self) {
         self.tableView.separatorInset = UIEdgeInsetsMake(0.0f, 10.0f, 0.0f, 0.0f);
         self.tableView.backgroundColor = [UIColor colorWithRed:0xF7/255.0f green:0xF7/255.0f blue:0xF7/255.0f alpha:1.0f];
+        self.hidesBottomBarWhenPushed = YES;
     }
     
     return self;
@@ -101,18 +100,42 @@
 }
 
 - (void)indexButtonTapped {
-    NSArray *example = [NSArray arrayWithObjects:@"Information", @"How it's Tested", @"Values", @"Interpretation", nil];
-    [PopoverView showPopoverAtPoint:CGPointMake(305, 40)
-                             inView:self.navigationController.navigationBar
-                          withTitle:@"Sections"
-                    withStringArray:example
-                           delegate:self];
+    NSArray *sections;
+    
+    if (self.event.eventType == EventTypeChemo) {
+        sections = @[@"Appointment", @"Mechanism", @"Timeline", @"Side Effects"];
+    } else if (self.event.eventType == EventTypeLabTest) {
+        sections = @[@"Appointment", @"Information", @"How it's Tested", @"Values", @"Interpretation"];
+    } else if (self.event.eventType == EventTypeSurgery) {
+        sections = @[@"Appointment", @"Information", @"Preparation", @"Recovery"];
+    }
+    
+    self.popoverView = [[PopoverView alloc] init];
+    self.popoverView.delegate = self;
+
+    [self.popoverView showAtPoint:CGPointMake(310, 40)
+                           inView:self.navigationController.navigationBar
+                        withTitle:@"Sections"
+                  withStringArray:sections];
+}
+
+#pragma mark - PopoverViewDelegate
+
+- (void)popoverView:(PopoverView *)popoverView didSelectItemAtIndex:(NSInteger)index {
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
+    [self.popoverView dismiss:YES];
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)aTableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -147,6 +170,23 @@
             NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"MM/dd/yyyy, h:mm a"];
             cell.timeLabel.text = [dateFormatter stringFromDate:self.event.dateTime];
+            
+            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+            [geocoder geocodeAddressString:self.event.location
+                         completionHandler:^(NSArray* placemarks, NSError* error){
+                             if (placemarks && [placemarks count] > 0) {
+                                 CLPlacemark *topResult = [placemarks objectAtIndex:0];
+                                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+                                 
+                                 MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(placemark.coordinate, 2000, 2000);
+                                 region.span.longitudeDelta /= 8.0f;
+                                 region.span.latitudeDelta /= 8.0f;
+                                 
+                                 [cell.mapView setRegion:region animated:YES];
+                                 [cell.mapView addAnnotation:placemark];
+                             }
+                         }
+             ];
             
             return cell;
         } else {
@@ -185,6 +225,23 @@
             NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"MM/dd/yyyy, h:mm a"];
             cell.timeLabel.text = [dateFormatter stringFromDate:self.event.dateTime];
+            
+            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+            [geocoder geocodeAddressString:self.event.location
+                         completionHandler:^(NSArray* placemarks, NSError* error){
+                             if (placemarks && [placemarks count] > 0) {
+                                 CLPlacemark *topResult = [placemarks objectAtIndex:0];
+                                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+                                 
+                                 MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(placemark.coordinate, 2000.0f, 2000.0f);
+                                 region.span.longitudeDelta /= 8.0f;
+                                 region.span.latitudeDelta /= 8.0f;
+                                 
+                                 [cell.mapView setRegion:region animated:YES];
+                                 [cell.mapView addAnnotation:placemark];
+                             }
+                         }
+             ];
             
             return cell;
         } else {
@@ -226,6 +283,23 @@
             [dateFormatter setDateFormat:@"MM/d/yyyy, h:mm a"];
             cell.timeLabel.text = [dateFormatter stringFromDate:self.event.dateTime];
             
+            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+            [geocoder geocodeAddressString:self.event.location
+                         completionHandler:^(NSArray* placemarks, NSError* error){
+                             if (placemarks && [placemarks count] > 0) {
+                                 CLPlacemark *topResult = [placemarks objectAtIndex:0];
+                                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+                                 
+                                 MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(placemark.coordinate, 2000, 2000);
+                                 region.span.longitudeDelta /= 8.0;
+                                 region.span.latitudeDelta /= 8.0;
+                                 
+                                 [cell.mapView setRegion:region animated:YES];
+                                 [cell.mapView addAnnotation:placemark];
+                             }
+                         }
+             ];
+            
             return cell;
         } else {
             InformationCell *cell = [self informationCellForTableView:tableView];
@@ -263,11 +337,7 @@
             informationString = chemoEvent.sideEffects;
         }
         
-        CGSize sizeToFit = [EventViewController sizeOfString:informationString
-                                                    withFont:[UIFont applicationFontOfSize:14.0f]
-                                          constrainedToWidth:300.0f];
-        
-        return 25.0f + sizeToFit.height + 10.0f;
+        return [InformationCell heightWithString:informationString font:[UIFont applicationFontOfSize:14.0f]];
     } else if (self.event.eventType == EventTypeLabTest) {
         LabTestEvent *labTestEvent = (LabTestEvent *)self.event;
         NSString *informationString;
@@ -284,11 +354,7 @@
             informationString = labTestEvent.interpretation;
         }
         
-        CGSize sizeToFit = [EventViewController sizeOfString:informationString
-                                                    withFont:[UIFont applicationFontOfSize:14.0f]
-                                          constrainedToWidth:300.0f];
-        
-        return 25.0f + sizeToFit.height + 10.0f;
+        return [InformationCell heightWithString:informationString font:[UIFont applicationFontOfSize:14.0f]];
     } else if (self.event.eventType == EventTypeSurgery) {
         SurgeryEvent *surgeryEvent = (SurgeryEvent *)self.event;
         NSString *informationString;
@@ -303,25 +369,10 @@
             informationString = surgeryEvent.recovery;
         }
         
-        CGSize sizeToFit = [EventViewController sizeOfString:informationString
-                                                    withFont:[UIFont applicationFontOfSize:14.0f]
-                                          constrainedToWidth:300.0f];
-        
-        return 25.0f + sizeToFit.height + 10.0f;
+        return [InformationCell heightWithString:informationString font:[UIFont applicationFontOfSize:14.0f]];
     }
     
     return 0.0f;
-}
-
-+ (CGSize)sizeOfString:(NSString *)string withFont:(UIFont *)font constrainedToWidth:(CGFloat)width {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    CGSize sizeToFit = [string sizeWithFont:font
-                          constrainedToSize:CGSizeMake(width, CGFLOAT_MAX)
-                              lineBreakMode:NSLineBreakByWordWrapping];
-#pragma clang diagnostic pop
-    
-    return sizeToFit;
 }
 
 @end

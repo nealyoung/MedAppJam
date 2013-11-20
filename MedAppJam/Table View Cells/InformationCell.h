@@ -13,4 +13,6 @@
 @property UILabel *titleLabel;
 @property UILabel *informationLabel;
 
++ (CGFloat)heightWithString:(NSString *)string font:(UIFont *)font;
+
 @end

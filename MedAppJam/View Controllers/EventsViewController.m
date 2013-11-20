@@ -16,6 +16,7 @@
 #import "LabTestEvent.h"
 #import "SurgeryEvent.h"
 #import "SORelativeDateTransformer.h"
+#import "SVProgressHUD.h"
 
 @interface EventsViewController ()
 
@@ -31,19 +32,20 @@
     self = [super initWithStyle:style];
     
     if (self) {
+        //self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Treatments" image:[UIImage imageNamed:@"Drawer.png"] tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
+
         NSData *eventsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"events"];
         
         if (eventsData == nil) {
-            NSLog(@"Created");
-
             NSArray *sampleEvents = @[[LabTestEvent sampleEvent], [ChemoEvent sampleEvent], [SurgeryEvent sampleEvent]];
             self.events = [sampleEvents mutableCopy];
             
             eventsData = [NSKeyedArchiver archivedDataWithRootObject:self.events];
             [[NSUserDefaults standardUserDefaults] setObject:eventsData forKey:@"events"];
         } else {
-            NSLog(@"Loaded");
-            self.events =[NSKeyedUnarchiver unarchiveObjectWithData:eventsData];
+            NSArray *events = [NSKeyedUnarchiver unarchiveObjectWithData:eventsData];
+            self.events = [events mutableCopy];
         }
         
         self.tableView.separatorInset = UIEdgeInsetsMake(0.0f, 70.0f, 0.0f, 0.0f);
@@ -74,10 +76,10 @@
 }
 
 - (void)addEvent {
-    CodeReaderViewController *codeReader = [[CodeReaderViewController alloc] init];
-    codeReader.readerView.readerDelegate = self;
+    CodeReaderViewController *codeReaderViewController = [[CodeReaderViewController alloc] init];
+    codeReaderViewController.readerView.readerDelegate = self;
     
-    [self presentViewController:codeReader animated:YES completion:nil];
+    [self presentViewController:codeReaderViewController animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource
@@ -141,13 +143,105 @@
 
 #pragma mark - ZBarReaderViewDelegate
 
-- (void)readerView:(ZBarReaderView *)readerView didReadSymbols:(ZBarSymbolSet * )symbols fromImage:(UIImage *)image {
-    [self dismissViewControllerAnimated:YES completion:nil];
+/*
+ Format for QR code is:
+ 
+ {
+    "EventType" : Integer EventType value,
+    "Date" : Date and time of appointment, in a string formatted with NSDateFormatterLongStyle
+    "Location" : "Medical Clinic\n123 Main St.\nIrvine, CA 92617"
+    "TreatmentID" : Integer index to array of treatments for specified event type
+ }
+ */
+- (void)readerView:(ZBarReaderView *)readerView didReadSymbols:(ZBarSymbolSet *)symbols fromImage:(UIImage *)image {
+    NSData *json;
     
     for (ZBarSymbol *symbol in symbols) {
-        NSLog(@"%@", symbol.data);
+        json = [symbol.data dataUsingEncoding:NSUTF8StringEncoding];
         break;
     }
+    
+    NSString *treatmentDataPath = [[NSBundle mainBundle] pathForResource:@"TreatmentData" ofType:@"plist"];
+    NSDictionary *treatmentData = [[NSDictionary alloc] initWithContentsOfFile:treatmentDataPath];
+    
+    NSError *error;
+    
+    NSDictionary *eventData = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:&error];
+    
+    if (error) {
+        NSLog(@"%@", error);
+        [SVProgressHUD showErrorWithStatus:@"Error reading code"];
+        
+        return;
+    }
+    
+    EventType eventType = [eventData[@"EventType"] integerValue];
+    NSNumber *treatmentID = eventData[@"TreatmentID"];
+
+    NSLog(@"%@", eventData);
+
+    Event *event;
+    
+    if (eventType == EventTypeChemo) {
+        ChemoEvent *chemoEvent = [[ChemoEvent alloc] init];
+        
+        NSArray *treatments = treatmentData[@"Chemotherapy"];
+        NSDictionary *treatment = treatments[[treatmentID integerValue]];
+        chemoEvent.eventType = EventTypeChemo;
+        chemoEvent.procedureName = treatment[@"ProcedureName"];
+        chemoEvent.timeline = treatment[@"Timeline"];
+        chemoEvent.mechanism = treatment[@"Mechanism"];
+        chemoEvent.sideEffects = treatment[@"SideEffects"];
+        
+        event = chemoEvent;
+    } else if (eventType == EventTypeLabTest) {
+        LabTestEvent *labTestEvent = [[LabTestEvent alloc] init];
+        
+        NSArray *treatments = treatmentData[@"Lab Test"];
+        NSDictionary *treatment = treatments[[treatmentID integerValue]];
+        labTestEvent.eventType = EventTypeLabTest;
+        labTestEvent.procedureName = treatment[@"ProcedureName"];
+        labTestEvent.information = treatment[@"Information"];
+        labTestEvent.howTested = treatment[@"HowTested"];
+        labTestEvent.values = treatment[@"Values"];
+        labTestEvent.interpretation = treatment[@"Interpretation"];
+        
+        event = labTestEvent;
+    } else if (eventType == EventTypeSurgery) {
+        SurgeryEvent *surgeryEvent = [[SurgeryEvent alloc] init];
+        
+        NSArray *treatments = treatmentData[@"Surgery"];
+        NSDictionary *treatment = treatments[[treatmentID integerValue]];
+        surgeryEvent.eventType = EventTypeSurgery;
+        surgeryEvent.procedureName = treatment[@"ProcedureName"];
+        surgeryEvent.information = treatment[@"Information"];
+        surgeryEvent.preparation = treatment[@"Preparation"];
+        surgeryEvent.recovery = treatment[@"Recovery"];
+        
+        event = surgeryEvent;
+    }
+    
+    event.location = eventData[@"Location"];
+    NSLog(@"%@", eventData[@"Location"]);
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterLongStyle];
+    event.dateTime = [dateFormatter dateFromString:eventData[@"Date"]];
+    
+    // Add the newly created event to the list
+    [self.events addObject:event];
+    
+    // Save the event so it is persisted on future app launches
+    NSData *eventsData = [NSKeyedArchiver archivedDataWithRootObject:self.events];
+    [[NSUserDefaults standardUserDefaults] setObject:eventsData forKey:@"events"];
+    
+    // Reload the data in the table view so the new event is visible
+    [self.tableView reloadData];
+    
+    [SVProgressHUD showSuccessWithStatus:@"Appointment added"];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

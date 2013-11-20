@@ -15,5 +15,6 @@
 - (id)initWithEvent:(Event *)event;
 
 @property Event *event;
+@property PopoverView *popoverView;
 
 @end

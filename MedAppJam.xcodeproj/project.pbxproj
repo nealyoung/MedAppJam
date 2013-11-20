@@ -19,6 +19,8 @@
 		0E08DF45182DD96A004CF9E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E08DF27182DD96A004CF9E4 /* UIKit.framework */; };
 		0E08DF4D182DD96B004CF9E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E08DF4B182DD96B004CF9E4 /* InfoPlist.strings */; };
 		0E08DF4F182DD96B004CF9E4 /* MedAppJamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E08DF4E182DD96B004CF9E4 /* MedAppJamTests.m */; };
+		0E35ACBE183860D60008FC66 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E35ACBB183860D60008FC66 /* SVProgressHUD.bundle */; };
+		0E35ACBF183860D60008FC66 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E35ACBD183860D60008FC66 /* SVProgressHUD.m */; };
 		0E50CE32183352C400892C1B /* CodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E50CE31183352C400892C1B /* CodeReaderViewController.m */; };
 		0E50CE37183366CC00892C1B /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E50CE36183366CC00892C1B /* EventViewController.m */; };
 		0E50CE3E1834024700892C1B /* AppointmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E50CE3D1834024700892C1B /* AppointmentCell.m */; };
@@ -48,7 +50,7 @@
 		0E94E59B1833375800C0434E /* surgery_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E94E59A1833375800C0434E /* surgery_icon@2x.png */; };
 		0EB76D5D1835D02900336ACF /* hamburger_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB76D5B1835D02900336ACF /* hamburger_button.png */; };
 		0EB76D5E1835D02900336ACF /* hamburger_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB76D5C1835D02900336ACF /* hamburger_button@2x.png */; };
-		0EBA529E1835CA040063740D /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EBA529D1835CA040063740D /* Data.plist */; };
+		0EBA529E1835CA040063740D /* TreatmentData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EBA529D1835CA040063740D /* TreatmentData.plist */; };
 		0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */; };
 		0ECC470E1835A20F00E1AEDD /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC470B1835A20F00E1AEDD /* PopoverView.m */; };
 		0EFCCB87182E208600A89CBC /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCCB86182E208600A89CBC /* EventsViewController.m */; };
@@ -82,6 +84,10 @@
 		0E08DF4A182DD96B004CF9E4 /* MedAppJamTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MedAppJamTests-Info.plist"; sourceTree = "<group>"; };
 		0E08DF4C182DD96B004CF9E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0E08DF4E182DD96B004CF9E4 /* MedAppJamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MedAppJamTests.m; sourceTree = "<group>"; };
+		0E35ACBA183860D60008FC66 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		0E35ACBB183860D60008FC66 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		0E35ACBC183860D60008FC66 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		0E35ACBD183860D60008FC66 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		0E50CE30183352C400892C1B /* CodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeReaderViewController.h; path = "View Controllers/CodeReaderViewController.h"; sourceTree = "<group>"; };
 		0E50CE31183352C400892C1B /* CodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeReaderViewController.m; path = "View Controllers/CodeReaderViewController.m"; sourceTree = "<group>"; };
 		0E50CE35183366CC00892C1B /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventViewController.h; path = "View Controllers/EventViewController.h"; sourceTree = "<group>"; };
@@ -142,7 +148,7 @@
 		0E94E59A1833375800C0434E /* surgery_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surgery_icon@2x.png"; sourceTree = "<group>"; };
 		0EB76D5B1835D02900336ACF /* hamburger_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburger_button.png; sourceTree = "<group>"; };
 		0EB76D5C1835D02900336ACF /* hamburger_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hamburger_button@2x.png"; sourceTree = "<group>"; };
-		0EBA529D1835CA040063740D /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Data.plist; path = MedAppJam/Data.plist; sourceTree = "<group>"; };
+		0EBA529D1835CA040063740D /* TreatmentData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TreatmentData.plist; path = MedAppJam/TreatmentData.plist; sourceTree = "<group>"; };
 		0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chemo_icon@2x.png"; sourceTree = "<group>"; };
 		0ECC470A1835A20F00E1AEDD /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
 		0ECC470B1835A20F00E1AEDD /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
@@ -189,7 +195,7 @@
 		0E08DF17182DD96A004CF9E4 = {
 			isa = PBXGroup;
 			children = (
-				0EBA529D1835CA040063740D /* Data.plist */,
+				0EBA529D1835CA040063740D /* TreatmentData.plist */,
 				0E08DF29182DD96A004CF9E4 /* MedAppJam */,
 				0E94E597183330B500C0434E /* Vendor */,
 				0E08DF48182DD96B004CF9E4 /* MedAppJamTests */,
@@ -268,6 +274,17 @@
 				0E08DF4B182DD96B004CF9E4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E35ACB9183860D60008FC66 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0E35ACBA183860D60008FC66 /* SVProgressHUD-Prefix.pch */,
+				0E35ACBB183860D60008FC66 /* SVProgressHUD.bundle */,
+				0E35ACBC183860D60008FC66 /* SVProgressHUD.h */,
+				0E35ACBD183860D60008FC66 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		0E50CE331833585500892C1B /* View Controllers */ = {
@@ -414,6 +431,7 @@
 			children = (
 				0ECC47091835A20F00E1AEDD /* PopoverView */,
 				0E94E596183330A600C0434E /* SORelativeDateTransformer */,
+				0E35ACB9183860D60008FC66 /* SVProgressHUD */,
 				0E94E5571833057C00C0434E /* ZBarSDK */,
 			);
 			name = Vendor;
@@ -516,9 +534,10 @@
 				0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */,
 				0E94E58C18330EB700C0434E /* lab_test_icon@2x.png in Resources */,
 				0E94E5781833057C00C0434E /* zbar-helpicons.png in Resources */,
-				0EBA529E1835CA040063740D /* Data.plist in Resources */,
+				0EBA529E1835CA040063740D /* TreatmentData.plist in Resources */,
 				0E08DF3C182DD96A004CF9E4 /* Images.xcassets in Resources */,
 				0E94E5791833057C00C0434E /* zbar-samples.png in Resources */,
+				0E35ACBE183860D60008FC66 /* SVProgressHUD.bundle in Resources */,
 				0EB76D5D1835D02900336ACF /* hamburger_button.png in Resources */,
 				0E94E5761833057C00C0434E /* zbar-back.png in Resources */,
 				0E94E5771833057C00C0434E /* zbar-help.html in Resources */,
@@ -546,6 +565,7 @@
 				0EFCCB8A182E212500A89CBC /* EventCell.m in Sources */,
 				0E50CE4318340FE800892C1B /* PinAnnotation.m in Sources */,
 				0E50CE32183352C400892C1B /* CodeReaderViewController.m in Sources */,
+				0E35ACBF183860D60008FC66 /* SVProgressHUD.m in Sources */,
 				0E94E5951833309D00C0434E /* SORelativeDateTransformer.m in Sources */,
 				0E9466DC182F0EC200F28FFE /* ChemoEvent.m in Sources */,
 				0E9466DF182F115200F28FFE /* LabTestEvent.m in Sources */,

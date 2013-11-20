@@ -52,4 +52,15 @@
     self.informationLabel.frame = CGRectMake(10.0f, 26.0f, sizeToFit.width, sizeToFit.height);
 }
 
++ (CGFloat)heightWithString:(NSString *)string font:(UIFont *)font {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    CGSize sizeToFit = [string sizeWithFont:font
+                          constrainedToSize:CGSizeMake(300.0f, CGFLOAT_MAX)
+                              lineBreakMode:NSLineBreakByWordWrapping];
+#pragma clang diagnostic pop
+    
+    return sizeToFit.height + 35.0f;
+}
+
 @end
