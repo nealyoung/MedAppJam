@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "DiagnosisViewController.h"
 #import "EventsViewController.h"
+#import "MedicationsViewController.h"
 #import "SVProgressHUD.h"
 #import "UIFont+Application.h"
 
@@ -27,11 +29,16 @@
     [self customizeAppearance];
     
     EventsViewController *eventsViewController = [[EventsViewController alloc] initWithStyle:UITableViewStylePlain];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:eventsViewController];
+    UINavigationController *eventsNavigationController = [[UINavigationController alloc] initWithRootViewController:eventsViewController];
+
+    DiagnosisViewController *diagnosisViewController = [[DiagnosisViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *diagnosisNavigationController = [[UINavigationController alloc] initWithRootViewController:diagnosisViewController];
     
+    MedicationsViewController *medicationsViewController = [[MedicationsViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *medicationsNavigationController = [[UINavigationController alloc] initWithRootViewController:medicationsViewController];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[navigationController];
+    tabBarController.viewControllers = @[eventsNavigationController, diagnosisNavigationController, medicationsNavigationController];
     
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
@@ -51,7 +58,10 @@
     [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0xDD/255.0 green:0x6A/255.0 blue:0x4D/255.0 alpha:1.0f]];
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0xDD/255.0 green:0x6A/255.0 blue:0x4D/255.0 alpha:1.0f]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0xDD/255.0 green:0x6A/255.0 blue:0x4D/255.0 alpha:1.0f]];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont mediumApplicationFontOfSize:12.0f], NSFontAttributeName, nil] forState:UIControlStateNormal];
+
     
     [[UIToolbar appearance] setBarTintColor:[UIColor colorWithRed:0xDD/255.0 green:0x6A/255.0 blue:0x4D/255.0 alpha:1.0f]];
     

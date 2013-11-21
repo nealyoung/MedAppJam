@@ -32,8 +32,7 @@
     self = [super initWithStyle:style];
     
     if (self) {
-        //self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Treatments" image:[UIImage imageNamed:@"Drawer.png"] tag:0];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Treatments" image:[UIImage imageNamed:@"calendar_icon.png"] tag:0];
 
         NSData *eventsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"events"];
         
@@ -60,14 +59,15 @@
     
     self.navigationItem.title = @"My Treatment Plan";
     
-    UIBarButtonItem *addEventButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
+    UIBarButtonItem *addEventButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"camera_icon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(addEvent)];
+    //UIBarButtonItem *addEventButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
     self.navigationItem.rightBarButtonItem = addEventButton;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,6 +132,18 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70.0f;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Remove the deleted event from the array, and save the changes
+        [self.events removeObjectAtIndex:indexPath.row];
+        NSData *eventsData = [NSKeyedArchiver archivedDataWithRootObject:self.events];
+        [[NSUserDefaults standardUserDefaults] setObject:eventsData forKey:@"events"];
+        
+        // Remove the deleted cell from the table view
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }
 }
 
 #pragma mark - UITableViewDelegate
@@ -222,7 +234,6 @@
     }
     
     event.location = eventData[@"Location"];
-    NSLog(@"%@", eventData[@"Location"]);
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterLongStyle];
@@ -231,6 +242,14 @@
     
     // Add the newly created event to the list
     [self.events addObject:event];
+    
+    // Sort the events list by date
+    self.events = [[self.events sortedArrayUsingComparator:^NSComparisonResult(Event *event1, Event *event2) {
+        NSDate *date1 = event1.dateTime;
+        NSDate *date2 = event2.dateTime;
+        
+        return [date1 compare:date2];
+    }] mutableCopy];
     
     // Save the event so it is persisted on future app launches
     NSData *eventsData = [NSKeyedArchiver archivedDataWithRootObject:self.events];
@@ -250,20 +269,6 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
 }
 */
 

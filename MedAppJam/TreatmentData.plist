@@ -2,17 +2,140 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Imaging</key>
+	<array>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Chest X-Ray</string>
+			<key>ImageName</key>
+			<string></string>
+			<key>Information</key>
+			<string>this test allows physicians to view your bones and outlines of organs to detect masses, infections or broken bones. </string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>PET Scan</string>
+			<key>ImageName</key>
+			<string></string>
+			<key>Information</key>
+			<string>this test shows areas of high metabolic activity in rapidly replicating cells like cancer cells</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>CT Scan</string>
+			<key>ImageName</key>
+			<string></string>
+			<key>Information</key>
+			<string>this test uses xrays to create a 3-d image of the internal organs </string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>PET/CT Scan</string>
+			<key>ImageName</key>
+			<string></string>
+			<key>Information</key>
+			<string>this test combines two tests to show the anatomy of internal organs and areas of high metabolic activity. </string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>MRI</string>
+			<key>ImageName</key>
+			<string></string>
+			<key>Information</key>
+			<string>this test shows finer details of soft tissues like organs, muscles, and tendons, which can be useful in surgical planning.</string>
+		</dict>
+	</array>
 	<key>Chemotherapy</key>
 	<array>
 		<dict>
 			<key>ProcedureName</key>
-			<string>Cyclophosphamide</string>
+			<string>Cisplatin</string>
 			<key>Mechanism</key>
-			<string>Chemicals</string>
+			<string>Cisplatin is a drug that binds to the DNA in rapidly dividing cells and creates a bridge between portions of the DNA that does not allow further multiplycation of the cells. This effectively breaks the cell and causes it to die. The small part of the DNA that is bound is a DNA base called Guanine.</string>
 			<key>Timeline</key>
-			<string>1 Day</string>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment.</string>
 			<key>SideEffects</key>
-			<string>Getting sick</string>
+			<string>Damage to the kidneys, damage to nerves, nausea, vomiting, hearing loss, electrolyte disturbance, bone marrow suppression, and hemolytic anemia.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Carboplatin</string>
+			<key>Mechanism</key>
+			<string>Carboplatin is an alkylating agent that works in three ways: 1. It attaches special molecules called alkyl groups onto DNA, which damages the DNA and does not allow the cell to multiply anymore. 2. Carboplatin bridges two strands of DNA together, which does not allow them to separate or allow the cell to divide and multiply. 3. Carboplatin causes errors to be made when the cancer cell is replicating. All three of these things cause the cancer cell to die.</string>
+			<key>Timeline</key>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment.</string>
+			<key>SideEffects</key>
+			<string>Neutropenia or a drop in white blood cells that can predispose a patient to infection. Tiredness and breathlessness due to low blood cells, also known as anemia. Easy bruising due to low platelets. Kidney damage. Loss of fertility or loss of periods in women. Nausea. Vomiting.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Vinorelbine</string>
+			<key>Mechanism</key>
+			<string>Vinorelbine is a chemotherapy drug that blocks the portion of the cancer cell that initiates division and multiplycation. This part of the cell is called the mitotic spindle. Without a functional mitotic spindle, the cell cannot be pulled apart and dies.</string>
+			<key>Timeline</key>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment.</string>
+			<key>SideEffects</key>
+			<string>Peripheral neuropathy that generally begins in the hands and feet, decreased resistance to infection, easy bleeding or bruising due to anemia, constipation, diarrhea, nausea, vomiting, feelings of fatigue and weakness, and on occasion inflammation and pain in the vein where the drug is administered. </string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Gemcitabine</string>
+			<key>Mechanism</key>
+			<string>Gemcitabine is a chemotherapy drug that blocks an enzyme called thymidylate synthetase. Thymidylate synthetase is required for DNA in cancer cells to continue to replicate. Without this enzyme the cell stops relicating and dies.</string>
+			<key>Timeline</key>
+			<string>Usually a 4-week schedule, 1000 mg/m2 over 30 minutes on Days 1, 8, and 15 of each 28-day cycle: 3-week schedule; 1250 mg/m2 over 30 minutes on Days 1 and 8 of each 21-day cycle.</string>
+			<key>SideEffects</key>
+			<string>Flu-like symptoms, fever (within 6-12 hours after the first dose), fatigue, nausea, vomiting, poor appetite, skin rash, weakness, hair loss, mouth sores, difficulty sleeping, and shortness of breath.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Paclitaxel (Taxol)</string>
+			<key>Mechanism</key>
+			<string>Paclitaxel is a chemotherapy drug that acts on infrastructure within the cancer cells and causes the cells to become stuck while trying to divide. The reason these cells become stuck is because Paclitaxel prevents the mitotic spindle, an important player in cell separation, from breaking down. At this point, cells will stop dividing and die.</string>
+			<key>Timeline</key>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment. </string>
+			<key>SideEffects</key>
+			<string>Low white blood cell levels predisposing to infection, low platelet levels causing easy bleeding and bruising, anemia, peripheral neuropathy, pain, weakness, nausea, vomiting, diarrhea, hair loss, and liver damage.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Docetaxel (Taxotere)</string>
+			<key>Mechanism</key>
+			<string>Docetaxel is a chemotherapy drug that prevents cells from making a crane-like structure, called the mitotic spindle, that is necessary to pull cells apart during replication. If cancer cells cannot separate from one cell into two cells, cell division is stopped and the cell dies.</string>
+			<key>Timeline</key>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment. Administered every 3 weeks during the cycles.</string>
+			<key>SideEffects</key>
+			<string>Low white blood cells predisposing to infection, anemia, low platelet levels, fevers, hair loss, and liver dysfunction.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Doxorubicin</string>
+			<key>Mechanism</key>
+			<string>Doxorubin is a chemotherapy drug that causes DNA to break by intercalation. Basically, another normally acting ezyme breaks the cancer cell DNA to unwind it and prepare it for replication, however, at this point Doxorubicin interupts the unwinding by placing itself between the tangled strands of DNA. Since the DNA has been blocked from resealing itself after untangling, the cell cannot continue to replicate and dies.</string>
+			<key>Timeline</key>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment.</string>
+			<key>SideEffects</key>
+			<string>Turns urine red/orange - this is not harmful to the patient, low WBC levels that can predispose the patient to infection, causes sores on the mouth and lips, low platelt counts, and can injure the heart muscle causing congestive heart failure during or after treatment.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Etoposide</string>
+			<key>Mechanism</key>
+			<string>Etoposide is a type of chemotherapy drug that blocks a protein called topoisomerase II that keeps the DNA inside the cells from tangling and breaking. Without this enzyme, the DNA tangles up on itself and breaks causing the cell to die. Cancers rely on topoisomerase more than regular cells because they multiply more than regular cells.</string>
+			<key>Timeline</key>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment. </string>
+			<key>SideEffects</key>
+			<string>Kidney damage, damage to a fetus during pregnancy or damage to a baby if breastfeeding during treatment, and infertility.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Pemetrexed (Alimta)</string>
+			<key>Mechanism</key>
+			<string>Pemetrexed is a chemotherapy drug that inhibits three enzymes: thymidylate synthase, dihydrofolate reductase, and glycinamide ribonucleotide formyltransferase. These enzymes are required to make the building blocks of DNA. Without these enzymes, cancer cells do not have enough building blocks to make a whole DNA sequence and since replication is not possible without DNA, the cancer cells die.</string>
+			<key>Timeline</key>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment. </string>
+			<key>SideEffects</key>
+			<string>Low white blood cell levels predisposing to infection, low red blood cell counts, anemia, mental fatigue, nausea, vomiting, diarrhea, oral sores, loss of appetite, rash, and constipation.</string>
 		</dict>
 	</array>
 	<key>Lab Test</key>
