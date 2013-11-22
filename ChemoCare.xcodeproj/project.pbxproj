@@ -62,6 +62,7 @@
 		0EA79FE4183FD98F00304028 /* TreatmentData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA79FE3183FD98F00304028 /* TreatmentData.plist */; };
 		0EA79FE7183FD9E100304028 /* RadiationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA79FE6183FD9E100304028 /* RadiationEvent.m */; };
 		0EA79FEA183FDB5800304028 /* ImagingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA79FE9183FDB5800304028 /* ImagingEvent.m */; };
+		0EA79FEC183FEF2700304028 /* CancerData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA79FEB183FEF2700304028 /* CancerData.plist */; };
 		0EB76D5E1835D02900336ACF /* hamburger_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB76D5C1835D02900336ACF /* hamburger_button@2x.png */; };
 		0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */; };
 		0ECC470E1835A20F00E1AEDD /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC470B1835A20F00E1AEDD /* PopoverView.m */; };
@@ -179,6 +180,7 @@
 		0EA79FE6183FD9E100304028 /* RadiationEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadiationEvent.m; path = Classes/RadiationEvent.m; sourceTree = "<group>"; };
 		0EA79FE8183FDB5800304028 /* ImagingEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagingEvent.h; path = Classes/ImagingEvent.h; sourceTree = "<group>"; };
 		0EA79FE9183FDB5800304028 /* ImagingEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagingEvent.m; path = Classes/ImagingEvent.m; sourceTree = "<group>"; };
+		0EA79FEB183FEF2700304028 /* CancerData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CancerData.plist; sourceTree = "<group>"; };
 		0EB76D5C1835D02900336ACF /* hamburger_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hamburger_button@2x.png"; sourceTree = "<group>"; };
 		0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chemo_icon@2x.png"; sourceTree = "<group>"; };
 		0ECC470A1835A20F00E1AEDD /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				0EA79FE3183FD98F00304028 /* TreatmentData.plist */,
+				0EA79FEB183FEF2700304028 /* CancerData.plist */,
 				0E08DF32182DD96A004CF9E4 /* AppDelegate.h */,
 				0E08DF33182DD96A004CF9E4 /* AppDelegate.m */,
 				0E50CE331833585500892C1B /* View Controllers */,
@@ -600,6 +603,7 @@
 				0E94E5941833309D00C0434E /* SORelativeDateTransformer.bundle in Resources */,
 				0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */,
 				0E94E58C18330EB700C0434E /* lab_test_icon@2x.png in Resources */,
+				0EA79FEC183FEF2700304028 /* CancerData.plist in Resources */,
 				0E94E5781833057C00C0434E /* zbar-helpicons.png in Resources */,
 				0E15071C183D573700F21A1D /* stethoscope_icon@2x.png in Resources */,
 				0E08DF3C182DD96A004CF9E4 /* Images.xcassets in Resources */,

@@ -92,10 +92,10 @@
     
     if (indexPath.row == 0) {
         cell.label.text = @"Name";
-        cell.textField.placeholder = @"Diphenhydramene";
+        cell.textField.placeholder = @"Tarceva";
     } else if (indexPath.row == 1) {
         cell.label.text = @"Dosage";
-        cell.textField.placeholder = @"80mg";
+        cell.textField.placeholder = @"150mg";
     } else if (indexPath.row == 2) {
         cell.label.text = @"Notes";
         cell.textField.placeholder = @"Take daily before bed";

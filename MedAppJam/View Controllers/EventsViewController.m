@@ -290,6 +290,13 @@
     // Reload the data in the table view so the new event is visible
     [self.tableView reloadData];
     
+    // Schedule a notification 1 hour before the event
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    // Set the fire date 1 hour before the event
+    notification.fireDate = [event.dateTime dateByAddingTimeInterval:-(60 * 60)];
+    notification.alertBody = [NSString stringWithFormat:@"%@ scheduled in 1 hour", event.procedureName];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
     [SVProgressHUD showSuccessWithStatus:@"Appointment added"];
     
     [self dismissViewControllerAnimated:YES completion:nil];

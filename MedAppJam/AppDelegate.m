@@ -61,7 +61,6 @@
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0xDD/255.0 green:0x6A/255.0 blue:0x4D/255.0 alpha:1.0f]];
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont mediumApplicationFontOfSize:12.0f], NSFontAttributeName, nil] forState:UIControlStateNormal];
-
     
     [[UIToolbar appearance] setBarTintColor:[UIColor colorWithRed:0xDD/255.0 green:0x6A/255.0 blue:0x4D/255.0 alpha:1.0f]];
     

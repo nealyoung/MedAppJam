@@ -8,7 +8,16 @@
 
 #import "DiagnosisViewController.h"
 
+#import "InformationCell.h"
+#import "UIFont+Application.h"
+
 @interface DiagnosisViewController ()
+
+@property NSInteger diagnosisIndex;
+@property NSArray *cancers;
+
+- (void)selectDiagnosis;
+- (void)dismissDiagnosisViewController;
 
 @end
 
@@ -19,14 +28,24 @@
     
     if (self) {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Diagnosis" image:[UIImage imageNamed:@"stethoscope_icon.png"] tag:1];
+        
+        NSString *cancerDataPath = [[NSBundle mainBundle] pathForResource:@"CancerData" ofType:@"plist"];
+        self.cancers = [[NSArray alloc] initWithContentsOfFile:cancerDataPath];
+        
+        self.diagnosisIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"diagnosisIndex"];
+        
+        UIBarButtonItem *selectDiagnosisButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(selectDiagnosis)];
+        self.navigationItem.rightBarButtonItem = selectDiagnosisButton;
     }
     
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSDictionary *cancer = self.cancers[self.diagnosisIndex];
+    self.navigationItem.title = cancer[@"Name"];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -35,87 +54,111 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (void)selectDiagnosis {
+    UITableViewController *tableViewController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+    tableViewController.tableView.dataSource = self;
+    tableViewController.tableView.delegate = self;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tableViewController];
+    tableViewController.navigationItem.title = @"Select Diagnosis";
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissDiagnosisViewController)];
+    tableViewController.navigationItem.leftBarButtonItem = cancelButton;
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+- (void)dismissDiagnosisViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView == self.tableView) {
+        return 3;
+    } else {
+        return [self.cancers count];
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *InformationCellIdentifier = @"InformationCell";
     
-    // Configure the cell...
+    if (tableView == self.tableView) {
+        InformationCell *cell = [tableView dequeueReusableCellWithIdentifier:InformationCellIdentifier];
+        NSDictionary *cancer = self.cancers[self.diagnosisIndex];
+
+        if (cell == nil) {
+            cell = [[InformationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:InformationCellIdentifier];
+        }
+        
+        if (indexPath.row == 0) {
+            cell.titleLabel.text = @"Information";
+            cell.informationLabel.text = cancer[@"Information"];
+        } else if (indexPath.row == 1) {
+            cell.titleLabel.text = @"Causes";
+            cell.informationLabel.text = cancer[@"Causes"];
+        } else if (indexPath.row == 2) {
+            cell.titleLabel.text = @"Treatment";
+            cell.informationLabel.text = cancer[@"Treatment"];
+        }
+        
+        return cell;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            cell.textLabel.font = [UIFont mediumApplicationFontOfSize:19.0f];
+        }
+        
+        NSDictionary *cancer = self.cancers[indexPath.row];
+        cell.textLabel.text = cancer[@"Name"];
+        
+        return cell;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView == self.tableView) {
+        NSDictionary *cancer = self.cancers[self.diagnosisIndex];
+        NSString *informationString;
+        
+        if (indexPath.row == 0) {
+            informationString = cancer[@"Information"];
+        } else if (indexPath.row == 1) {
+            informationString = cancer[@"Causes"];
+        } else if (indexPath.row == 2) {
+            informationString = cancer[@"Treatment"];
+        }
+        
+        return [InformationCell heightWithString:informationString font:[UIFont applicationFontOfSize:14.0f]];
+    } else {
+        return 44.0f;
+    }
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"diagnosisIndex"];
+    self.diagnosisIndex = indexPath.row;
+    NSDictionary *cancer = self.cancers[self.diagnosisIndex];
+    self.navigationItem.title = cancer[@"Name"];
+    [self.tableView reloadData];
     
-    return cell;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

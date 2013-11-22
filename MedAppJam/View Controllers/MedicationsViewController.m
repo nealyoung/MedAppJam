@@ -31,9 +31,10 @@
         
         UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addMedication)];
         self.navigationItem.rightBarButtonItem = barButtonItem;
-        self.navigationItem.leftBarButtonItem = self.editButtonItem;
         
         NSData *medicationsData = [[NSUserDefaults standardUserDefaults] objectForKey:@"medications"];
+        
+        NSLog(@"%@", medicationsData);
         
         if (medicationsData == nil) {
             self.medications = [NSMutableArray array];

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Name</key>
+		<string>Adenocarcinoma</string>
+		<key>Information</key>
+		<string>Adenocarcinoma are considered the most common primary tumors of the lung, which is a tumor that originated from the lung tissue rather than metastasized or moved to the lung from another area in the body. Additionally, while some adenocarcinomas are seen in smokers, generally these cancers are seen in young women and patients who are not cigarrette smokers. Adenocarcinomas tend to grow slowly overtime, but can metastasize very early.</string>
+		<key>Causes</key>
+		<string>Adenocarcinomas develop from changes in certain genes over time that make normal genes into cancer genes. Some examples of these cancer genes are EGRF or epidermal growth factor receptor and K-RAS.</string>
+		<key>Treatment</key>
+		<string>Surgery, chemotherapy, radiation, and target treatments - alone or in combination. </string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Squamous Cell Carcinoma</string>
+		<key>Information</key>
+		<string>Squamous Cell Carcinoma tumors are more commonly found in men than women and are closely related to a history of smoking. These cancers tend to begin in an area of the central airway called the major bronchi. Squamous cell cancers typically move to lymph nodes near the lung, called hilar lymph nodes and then to distant parts of the body. Squamous cell tumors metastasize less quickly than other types of lung cancer.</string>
+		<key>Causes</key>
+		<string>Smoking-related cancers develop after exposure to carcinogens in the cigarrettes that cause thousands of changes in normal cells that transform them into cancer cells.  These changes in the cells can be due to damage of genes found in the DNA sequence on chromosome 3 that tells the cells to become multiply as cancer cells.</string>
+		<key>Treatment</key>
+		<string>Surgery, chemotherapy, radiation, and target treatments - alone or in combination. </string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Large Cell Carcinoma</string>
+		<key>Information</key>
+		<string>Large cell carcinomas are cancers that arise in the periphery of the lung. Some of these cancers are associated with smoking, however, some are not. These cancers result from a normal epithelial cell transforming into a cancer cell. Large cell carcinoma is considered to be a diagnosis of exclusion, which means that this cancer is the default cancer diagnosis when all other types of lung cancer have been ruled out. </string>
+		<key>Causes</key>
+		<string>Smoking-related cancers develop after exposure to carcinogens in the cigarrettes that cause thousands of changes in normal cells that transform them into cancer cells.  These changes in the cells can be due to damage of genes found in the DNA sequence on chromosome 3 that tells the cells to become multiply as cancer cells. </string>
+		<key>Treatment</key>
+		<string>Surgery, chemotherapy, radiation, and target treatments - alone or in combination. </string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Small Cell Carcinoma</string>
+		<key>Information</key>
+		<string>Small Cell Carcinoma are cancers that are more commonly seen in men. Small cell carcinoma has a strong correlation with a history of smoking. Typically these cancers grow rapidly and metasticise early on in the disease. Furthermore, small cell carcinomas arise from cells called neuroendocrine cells. These cells can abnormally produce hormones. Some of these hormones are antidiuretic hormone (ADH) or adrenocorticotrophic hormone (ACTH). These hormones can theoretically cause problems such as weight gain, electrolyte imbalance, diabetes, skin changes, and osteoporosis. The production or levels of hormones in the body when small cell carcinomas are diagnosed have not been shown to effect overall prognosis or outcome.</string>
+		<key>Causes</key>
+		<string>Smoking-related cancers develop after exposure to carcinogens in the cigarrettes that cause thousands of changes in normal cells that transform them into cancer cells.  These changes in the cells can be due to damage of genes found in the DNA sequence on chromosome 3 that tells the cells to become multiply as cancer cells.</string>
+		<key>Treatment</key>
+		<string>Chemotherapy and radiation.</string>
+	</dict>
+</array>
+</plist>
