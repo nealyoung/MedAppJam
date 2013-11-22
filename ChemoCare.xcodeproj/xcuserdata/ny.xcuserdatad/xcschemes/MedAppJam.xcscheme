@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0E08DF1F182DD96A004CF9E4"
                BuildableName = "MedAppJam.app"
-               BlueprintName = "MedAppJam"
-               ReferencedContainer = "container:MedAppJam.xcodeproj">
+               BlueprintName = "ChemoCare"
+               ReferencedContainer = "container:ChemoCare.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0E08DF40182DD96A004CF9E4"
                BuildableName = "MedAppJamTests.xctest"
-               BlueprintName = "MedAppJamTests"
-               ReferencedContainer = "container:MedAppJam.xcodeproj">
+               BlueprintName = "ChemoCareTests"
+               ReferencedContainer = "container:ChemoCare.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0E08DF1F182DD96A004CF9E4"
             BuildableName = "MedAppJam.app"
-            BlueprintName = "MedAppJam"
-            ReferencedContainer = "container:MedAppJam.xcodeproj">
+            BlueprintName = "ChemoCare"
+            ReferencedContainer = "container:ChemoCare.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0E08DF1F182DD96A004CF9E4"
             BuildableName = "MedAppJam.app"
-            BlueprintName = "MedAppJam"
-            ReferencedContainer = "container:MedAppJam.xcodeproj">
+            BlueprintName = "ChemoCare"
+            ReferencedContainer = "container:ChemoCare.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0E08DF1F182DD96A004CF9E4"
             BuildableName = "MedAppJam.app"
-            BlueprintName = "MedAppJam"
-            ReferencedContainer = "container:MedAppJam.xcodeproj">
+            BlueprintName = "ChemoCare"
+            ReferencedContainer = "container:ChemoCare.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

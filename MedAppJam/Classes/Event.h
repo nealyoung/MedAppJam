@@ -10,7 +10,9 @@
 
 typedef NS_ENUM(NSInteger, EventType) {
     EventTypeChemo,
+    EventTypeImaging,
     EventTypeLabTest,
+    EventTypeRadiation,
     EventTypeSurgery
 };
 

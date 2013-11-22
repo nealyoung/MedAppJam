@@ -10,9 +10,11 @@
 
 #import "AppointmentCell.h"
 #import "ChemoEvent.h"
+#import "ImagingEvent.h"
 #import "InformationCell.h"
 #import "LabTestEvent.h"
 #import "PopoverView.h"
+#import "RadiationEvent.h"
 #import "SurgeryEvent.h"
 #import "UIFont+Application.h"
 
@@ -46,8 +48,12 @@
         
         if (self.event.eventType == EventTypeChemo) {
             self.navigationItem.title = @"Chemotherapy";
+        } else if (self.event.eventType == EventTypeImaging) {
+            self.navigationItem.title = @"Imaging";
         } else if (self.event.eventType == EventTypeLabTest) {
             self.navigationItem.title = @"Lab Test";
+        } else if (self.event.eventType == EventTypeRadiation) {
+            self.navigationItem.title = @"Radiation";
         } else if (self.event.eventType == EventTypeSurgery) {
             self.navigationItem.title = @"Surgery";
         }
@@ -104,8 +110,12 @@
     
     if (self.event.eventType == EventTypeChemo) {
         sections = @[@"Appointment", @"Mechanism", @"Timeline", @"Side Effects"];
+    } else if (self.event.eventType == EventTypeImaging) {
+        sections = @[@"Appointment", @"Information"];
     } else if (self.event.eventType == EventTypeLabTest) {
         sections = @[@"Appointment", @"Information", @"How it's Tested", @"Values", @"Interpretation"];
+    } else if (self.event.eventType == EventTypeRadiation) {
+        sections = @[@"Appointment", @"Information", @"Timeline", @"Side Effects"];
     } else if (self.event.eventType == EventTypeSurgery) {
         sections = @[@"Appointment", @"Information", @"Preparation", @"Recovery"];
     }
@@ -141,8 +151,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.event.eventType == EventTypeChemo) {
         return 4;
+    } else if (self.event.eventType == EventTypeImaging) {
+        return 2;
     } else if (self.event.eventType == EventTypeLabTest) {
         return 5;
+    } else if (self.event.eventType == EventTypeRadiation) {
+        return 4;
     } else if (self.event.eventType == EventTypeSurgery) {
         return 4;
     }
@@ -205,6 +219,52 @@
             
             return cell;
         }
+    } else if (self.event.eventType == EventTypeImaging) {
+        /*
+         Row 0: Appointment
+         Row 1: Information
+         */
+        
+        ImagingEvent *imagingEvent = (ImagingEvent *)self.event;
+        
+        if (indexPath.row == 0) {
+            AppointmentCell *cell = [self appointmentCellForTableView:tableView];
+            cell.iconImageView.image = [UIImage imageNamed:@"imaging_icon.png"];
+            cell.procedureNameLabel.text = self.event.procedureName;
+            cell.locationLabel.text = self.event.location;
+            
+            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"MM/dd/yyyy, h:mm a"];
+            cell.timeLabel.text = [dateFormatter stringFromDate:self.event.dateTime];
+            
+            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+            [geocoder geocodeAddressString:self.event.location
+                         completionHandler:^(NSArray* placemarks, NSError* error){
+                             if (placemarks && [placemarks count] > 0) {
+                                 CLPlacemark *topResult = [placemarks objectAtIndex:0];
+                                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+                                 
+                                 MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(placemark.coordinate, 2000.0f, 2000.0f);
+                                 region.span.longitudeDelta /= 8.0f;
+                                 region.span.latitudeDelta /= 8.0f;
+                                 
+                                 [cell.mapView setRegion:region animated:YES];
+                                 [cell.mapView addAnnotation:placemark];
+                             }
+                         }
+             ];
+            
+            return cell;
+        } else {
+            InformationCell *cell = [self informationCellForTableView:tableView];
+            
+            if (indexPath.row == 1) {
+                cell.titleLabel.text = @"Information";
+                cell.informationLabel.text = imagingEvent.information;
+            }
+            
+            return cell;
+        }
     } else if (self.event.eventType == EventTypeLabTest) {
         /*
          Row 0: Appointment
@@ -259,6 +319,60 @@
             } else if (indexPath.row == 4) {
                 cell.titleLabel.text = @"Interpretation";
                 cell.informationLabel.text = labTestEvent.interpretation;
+            }
+            
+            return cell;
+        }
+    } else if (self.event.eventType == EventTypeRadiation) {
+        /*
+         Row 0: Appointment
+         Row 1: Information
+         Row 2: Timeline
+         Row 3: Side Effects
+         */
+        
+        RadiationEvent *radiationEvent = (RadiationEvent *)self.event;
+        
+        if (indexPath.row == 0) {
+            AppointmentCell *cell = [self appointmentCellForTableView:tableView];
+            cell.iconImageView.image = [UIImage imageNamed:@"radiation_icon.png"];
+            cell.procedureNameLabel.text = self.event.procedureName;
+            cell.locationLabel.text = self.event.location;
+            
+            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"MM/dd/yyyy, h:mm a"];
+            cell.timeLabel.text = [dateFormatter stringFromDate:self.event.dateTime];
+            
+            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+            [geocoder geocodeAddressString:self.event.location
+                         completionHandler:^(NSArray* placemarks, NSError* error){
+                             if (placemarks && [placemarks count] > 0) {
+                                 CLPlacemark *topResult = [placemarks objectAtIndex:0];
+                                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+                                 
+                                 MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(placemark.coordinate, 2000.0f, 2000.0f);
+                                 region.span.longitudeDelta /= 8.0f;
+                                 region.span.latitudeDelta /= 8.0f;
+                                 
+                                 [cell.mapView setRegion:region animated:YES];
+                                 [cell.mapView addAnnotation:placemark];
+                             }
+                         }
+             ];
+            
+            return cell;
+        } else {
+            InformationCell *cell = [self informationCellForTableView:tableView];
+            
+            if (indexPath.row == 1) {
+                cell.titleLabel.text = @"Information";
+                cell.informationLabel.text = radiationEvent.information;
+            } else if (indexPath.row == 2) {
+                cell.titleLabel.text = @"Timeline";
+                cell.informationLabel.text = radiationEvent.timeline;
+            } else if (indexPath.row == 3) {
+                cell.titleLabel.text = @"Information";
+                cell.informationLabel.text = radiationEvent.sideEffects;
             }
             
             return cell;
@@ -338,6 +452,17 @@
         }
         
         return [InformationCell heightWithString:informationString font:[UIFont applicationFontOfSize:14.0f]];
+    } else if (self.event.eventType == EventTypeImaging) {
+        ImagingEvent *imagingEvent = (ImagingEvent *)self.event;
+        NSString *informationString;
+        
+        if (indexPath.row == 0) {
+            return 110.0f;
+        } else if (indexPath.row == 1) {
+            informationString = imagingEvent.information;
+        }
+        
+        return [InformationCell heightWithString:informationString font:[UIFont applicationFontOfSize:14.0f]];
     } else if (self.event.eventType == EventTypeLabTest) {
         LabTestEvent *labTestEvent = (LabTestEvent *)self.event;
         NSString *informationString;
@@ -352,6 +477,21 @@
             informationString = labTestEvent.values;
         } else if (indexPath.row == 4) {
             informationString = labTestEvent.interpretation;
+        }
+        
+        return [InformationCell heightWithString:informationString font:[UIFont applicationFontOfSize:14.0f]];
+    } else if (self.event.eventType == EventTypeRadiation) {
+        RadiationEvent *radiationEvent = (RadiationEvent *)self.event;
+        NSString *informationString;
+        
+        if (indexPath.row == 0) {
+            return 110.0f;
+        } else if (indexPath.row == 1) {
+            informationString = radiationEvent.information;
+        } else if (indexPath.row == 2) {
+            informationString = radiationEvent.timeline;
+        } else if (indexPath.row == 3) {
+            informationString = radiationEvent.sideEffects;
         }
         
         return [InformationCell heightWithString:informationString font:[UIFont applicationFontOfSize:14.0f]];

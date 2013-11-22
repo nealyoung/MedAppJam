@@ -13,7 +13,9 @@
 #import "Event.h"
 #import "EventCell.h"
 #import "EventViewController.h"
+#import "ImagingEvent.h"
 #import "LabTestEvent.h"
+#import "RadiationEvent.h"
 #import "SurgeryEvent.h"
 #import "SORelativeDateTransformer.h"
 #import "SVProgressHUD.h"
@@ -102,12 +104,20 @@
     
     Event *event = self.events[indexPath.row];
     
+    NSLog(@"%d", event.eventType);
+    
     if (event.eventType == EventTypeChemo) {
         cell.eventTypeLabel.text = @"Chemotherapy";
         cell.iconImageView.image = [UIImage imageNamed:@"chemo_icon.png"];
+    } else if (event.eventType == EventTypeImaging) {
+        cell.eventTypeLabel.text = @"Imaging";
+        cell.iconImageView.image = [UIImage imageNamed:@"imaging_icon.png"];
     } else if (event.eventType == EventTypeLabTest) {
         cell.eventTypeLabel.text = @"Lab Test";
         cell.iconImageView.image = [UIImage imageNamed:@"lab_test_icon.png"];
+    } else if (event.eventType == EventTypeRadiation) {
+        cell.eventTypeLabel.text = @"Radiation";
+        cell.iconImageView.image = [UIImage imageNamed:@"radiation_icon.png"];
     } else if (event.eventType == EventTypeSurgery) {
         cell.eventTypeLabel.text = @"Surgery";
         cell.iconImageView.image = [UIImage imageNamed:@"surgery_icon.png"];
@@ -206,6 +216,16 @@
         chemoEvent.sideEffects = treatment[@"SideEffects"];
         
         event = chemoEvent;
+    } else if (eventType == EventTypeImaging) {
+        ImagingEvent *imagingEvent = [[ImagingEvent alloc] init];
+        
+        NSArray *treatments = treatmentData[@"Imaging"];
+        NSDictionary *treatment = treatments[[treatmentID integerValue]];
+        imagingEvent.eventType = EventTypeImaging;
+        imagingEvent.procedureName = treatment[@"ProcedureName"];
+        imagingEvent.information = treatment[@"Information"];
+        
+        event = imagingEvent;
     } else if (eventType == EventTypeLabTest) {
         LabTestEvent *labTestEvent = [[LabTestEvent alloc] init];
         
@@ -219,6 +239,18 @@
         labTestEvent.interpretation = treatment[@"Interpretation"];
         
         event = labTestEvent;
+    } else if (eventType == EventTypeRadiation) {
+        RadiationEvent *radiationEvent = [[RadiationEvent alloc] init];
+        
+        NSArray *treatments = treatmentData[@"Radiation"];
+        NSDictionary *treatment = treatments[[treatmentID integerValue]];
+        radiationEvent.eventType = EventTypeRadiation;
+        radiationEvent.procedureName = treatment[@"ProcedureName"];
+        radiationEvent.information = treatment[@"Information"];
+        radiationEvent.timeline = treatment[@"Timeline"];
+        radiationEvent.sideEffects = treatment[@"SideEffects"];
+        
+        event = radiationEvent;
     } else if (eventType == EventTypeSurgery) {
         SurgeryEvent *surgeryEvent = [[SurgeryEvent alloc] init];
         

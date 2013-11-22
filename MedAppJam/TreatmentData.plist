@@ -10,15 +10,7 @@
 			<key>ImageName</key>
 			<string></string>
 			<key>Information</key>
-			<string>this test allows physicians to view your bones and outlines of organs to detect masses, infections or broken bones. </string>
-		</dict>
-		<dict>
-			<key>ProcedureName</key>
-			<string>PET Scan</string>
-			<key>ImageName</key>
-			<string></string>
-			<key>Information</key>
-			<string>this test shows areas of high metabolic activity in rapidly replicating cells like cancer cells</string>
+			<string>A chest x-ray allows physicians to view your bones and outlines of organs to detect masses, infections or broken bones. </string>
 		</dict>
 		<dict>
 			<key>ProcedureName</key>
@@ -26,15 +18,7 @@
 			<key>ImageName</key>
 			<string></string>
 			<key>Information</key>
-			<string>this test uses xrays to create a 3-d image of the internal organs </string>
-		</dict>
-		<dict>
-			<key>ProcedureName</key>
-			<string>PET/CT Scan</string>
-			<key>ImageName</key>
-			<string></string>
-			<key>Information</key>
-			<string>this test combines two tests to show the anatomy of internal organs and areas of high metabolic activity. </string>
+			<string>A CT (Computed Tomography) scan uses x-rays to create a 3-dimensional image of the internal organs </string>
 		</dict>
 		<dict>
 			<key>ProcedureName</key>
@@ -42,21 +26,50 @@
 			<key>ImageName</key>
 			<string></string>
 			<key>Information</key>
-			<string>this test shows finer details of soft tissues like organs, muscles, and tendons, which can be useful in surgical planning.</string>
+			<string>A MRI (magnetic resonance imaging) screening shows finer details of soft tissues like organs, muscles, and tendons, which can be useful in surgical planning.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>PET Scan</string>
+			<key>ImageName</key>
+			<string></string>
+			<key>Information</key>
+			<string>A PET scan shows areas of high metabolic activity in rapidly replicating cells like cancer cells</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>PET/CT Scan</string>
+			<key>ImageName</key>
+			<string></string>
+			<key>Information</key>
+			<string>A PET/CT combines two tests to show the anatomy of internal organs and areas of high metabolic activity. </string>
+		</dict>
+	</array>
+	<key>Radiation</key>
+	<array>
+		<dict>
+			<key>ProcedureName</key>
+			<string>External Beam Radiation</string>
+			<key>Information</key>
+			<string>External beam radiation therapy (EBRT) focuses radiation from outside the body on the cancer. This is the type of radiation therapy most often used to treat a primary lung cancer or its spread to other organs. There are several types of external beam radiation including: Three-dimensional conformal radiation therapy(3D-CRT), Intensity Modulated radiation therapy (IMRT), stereotactic body radiation therapy (SBRT), and stereotactic radiosurgery (SRS).</string>
+			<key>SideEffects</key>
+			<string>Skin irritation, hair loss in the area that receives the radiaiton therapy, cough, shortness of breath, fatigue, and inflammation of the esophagus.</string>
+			<key>Timeline</key>
+			<string>Most often, radiation treatments to the lungs are given 5 days a week for 5 to 7 weeks, but this can vary based on the type of EBRT and the reason it’s being given.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Internal Beam Radiation (Brachytherapy)</string>
+			<key>Information</key>
+			<string>For this type of treatment, the doctor places a small source of radioactive material (often in the form of small pellets) directly into the cancer or into the airway next to the cancer. This is usually done through a bronchoscope, but it may also be done during surgery. The radiation travels only a short distance from the source, limiting the effects on surrounding healthy tissues. The radiation source is usually removed after a short time. Less often, small radioactive “seeds” are left in place permanently, and the radiation gets weaker over several weeks.</string>
+			<key>SideEffects</key>
+			<string>Occasionally patients complain of short periods of nausea and fatigue, but otherwise few side-effects.</string>
+			<key>Timeline</key>
+			<string>Depending on the type of implant that is placed, therapy could last a few minutes or a few days. High-dose-rate brachy therapy only required a few minutes per session.Sessions are generally repeated throughout the day or weeks following.</string>
 		</dict>
 	</array>
 	<key>Chemotherapy</key>
 	<array>
-		<dict>
-			<key>ProcedureName</key>
-			<string>Cisplatin</string>
-			<key>Mechanism</key>
-			<string>Cisplatin is a drug that binds to the DNA in rapidly dividing cells and creates a bridge between portions of the DNA that does not allow further multiplycation of the cells. This effectively breaks the cell and causes it to die. The small part of the DNA that is bound is a DNA base called Guanine.</string>
-			<key>Timeline</key>
-			<string>3 to 6 months with approximately 4 to 8 cycles of treatment.</string>
-			<key>SideEffects</key>
-			<string>Damage to the kidneys, damage to nerves, nausea, vomiting, hearing loss, electrolyte disturbance, bone marrow suppression, and hemolytic anemia.</string>
-		</dict>
 		<dict>
 			<key>ProcedureName</key>
 			<string>Carboplatin</string>
@@ -69,33 +82,13 @@
 		</dict>
 		<dict>
 			<key>ProcedureName</key>
-			<string>Vinorelbine</string>
+			<string>Cisplatin</string>
 			<key>Mechanism</key>
-			<string>Vinorelbine is a chemotherapy drug that blocks the portion of the cancer cell that initiates division and multiplycation. This part of the cell is called the mitotic spindle. Without a functional mitotic spindle, the cell cannot be pulled apart and dies.</string>
+			<string>Cisplatin is a drug that binds to the DNA in rapidly dividing cells and creates a bridge between portions of the DNA that does not allow further multiplycation of the cells. This effectively breaks the cell and causes it to die. The small part of the DNA that is bound is a DNA base called Guanine.</string>
 			<key>Timeline</key>
 			<string>3 to 6 months with approximately 4 to 8 cycles of treatment.</string>
 			<key>SideEffects</key>
-			<string>Peripheral neuropathy that generally begins in the hands and feet, decreased resistance to infection, easy bleeding or bruising due to anemia, constipation, diarrhea, nausea, vomiting, feelings of fatigue and weakness, and on occasion inflammation and pain in the vein where the drug is administered. </string>
-		</dict>
-		<dict>
-			<key>ProcedureName</key>
-			<string>Gemcitabine</string>
-			<key>Mechanism</key>
-			<string>Gemcitabine is a chemotherapy drug that blocks an enzyme called thymidylate synthetase. Thymidylate synthetase is required for DNA in cancer cells to continue to replicate. Without this enzyme the cell stops relicating and dies.</string>
-			<key>Timeline</key>
-			<string>Usually a 4-week schedule, 1000 mg/m2 over 30 minutes on Days 1, 8, and 15 of each 28-day cycle: 3-week schedule; 1250 mg/m2 over 30 minutes on Days 1 and 8 of each 21-day cycle.</string>
-			<key>SideEffects</key>
-			<string>Flu-like symptoms, fever (within 6-12 hours after the first dose), fatigue, nausea, vomiting, poor appetite, skin rash, weakness, hair loss, mouth sores, difficulty sleeping, and shortness of breath.</string>
-		</dict>
-		<dict>
-			<key>ProcedureName</key>
-			<string>Paclitaxel (Taxol)</string>
-			<key>Mechanism</key>
-			<string>Paclitaxel is a chemotherapy drug that acts on infrastructure within the cancer cells and causes the cells to become stuck while trying to divide. The reason these cells become stuck is because Paclitaxel prevents the mitotic spindle, an important player in cell separation, from breaking down. At this point, cells will stop dividing and die.</string>
-			<key>Timeline</key>
-			<string>3 to 6 months with approximately 4 to 8 cycles of treatment. </string>
-			<key>SideEffects</key>
-			<string>Low white blood cell levels predisposing to infection, low platelet levels causing easy bleeding and bruising, anemia, peripheral neuropathy, pain, weakness, nausea, vomiting, diarrhea, hair loss, and liver damage.</string>
+			<string>Damage to the kidneys, damage to nerves, nausea, vomiting, hearing loss, electrolyte disturbance, bone marrow suppression, and hemolytic anemia.</string>
 		</dict>
 		<dict>
 			<key>ProcedureName</key>
@@ -129,6 +122,26 @@
 		</dict>
 		<dict>
 			<key>ProcedureName</key>
+			<string>Gemcitabine</string>
+			<key>Mechanism</key>
+			<string>Gemcitabine is a chemotherapy drug that blocks an enzyme called thymidylate synthetase. Thymidylate synthetase is required for DNA in cancer cells to continue to replicate. Without this enzyme the cell stops relicating and dies.</string>
+			<key>Timeline</key>
+			<string>Usually a 4-week schedule, 1000 mg/m2 over 30 minutes on Days 1, 8, and 15 of each 28-day cycle: 3-week schedule; 1250 mg/m2 over 30 minutes on Days 1 and 8 of each 21-day cycle.</string>
+			<key>SideEffects</key>
+			<string>Flu-like symptoms, fever (within 6-12 hours after the first dose), fatigue, nausea, vomiting, poor appetite, skin rash, weakness, hair loss, mouth sores, difficulty sleeping, and shortness of breath.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Paclitaxel (Taxol)</string>
+			<key>Mechanism</key>
+			<string>Paclitaxel is a chemotherapy drug that acts on infrastructure within the cancer cells and causes the cells to become stuck while trying to divide. The reason these cells become stuck is because Paclitaxel prevents the mitotic spindle, an important player in cell separation, from breaking down. At this point, cells will stop dividing and die.</string>
+			<key>Timeline</key>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment. </string>
+			<key>SideEffects</key>
+			<string>Low white blood cell levels predisposing to infection, low platelet levels causing easy bleeding and bruising, anemia, peripheral neuropathy, pain, weakness, nausea, vomiting, diarrhea, hair loss, and liver damage.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
 			<string>Pemetrexed (Alimta)</string>
 			<key>Mechanism</key>
 			<string>Pemetrexed is a chemotherapy drug that inhibits three enzymes: thymidylate synthase, dihydrofolate reductase, and glycinamide ribonucleotide formyltransferase. These enzymes are required to make the building blocks of DNA. Without these enzymes, cancer cells do not have enough building blocks to make a whole DNA sequence and since replication is not possible without DNA, the cancer cells die.</string>
@@ -137,9 +150,31 @@
 			<key>SideEffects</key>
 			<string>Low white blood cell levels predisposing to infection, low red blood cell counts, anemia, mental fatigue, nausea, vomiting, diarrhea, oral sores, loss of appetite, rash, and constipation.</string>
 		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Vinorelbine</string>
+			<key>Mechanism</key>
+			<string>Vinorelbine is a chemotherapy drug that blocks the portion of the cancer cell that initiates division and multiplycation. This part of the cell is called the mitotic spindle. Without a functional mitotic spindle, the cell cannot be pulled apart and dies.</string>
+			<key>Timeline</key>
+			<string>3 to 6 months with approximately 4 to 8 cycles of treatment.</string>
+			<key>SideEffects</key>
+			<string>Peripheral neuropathy that generally begins in the hands and feet, decreased resistance to infection, easy bleeding or bruising due to anemia, constipation, diarrhea, nausea, vomiting, feelings of fatigue and weakness, and on occasion inflammation and pain in the vein where the drug is administered. </string>
+		</dict>
 	</array>
 	<key>Lab Test</key>
 	<array>
+		<dict>
+			<key>ProcedureName</key>
+			<string>ALK</string>
+			<key>Information</key>
+			<string>Some lung cancers have changes in the ALK gene that cause the cancer cell to make a protein that leads to out of control growth. Tumor tissues can be tested for this gene change. If it’s found, the patient can be treated with a special drug that targets the abnormal protein, i.e. crizotinib.</string>
+			<key>HowTested</key>
+			<string>ALK is tested with a blood sample.</string>
+			<key>Values</key>
+			<string>Normal: Less than 5 nanograms per milliliter\n\nMany conditions can change your CEA levels. Your doctor will discuss any significant abnormal results with you in relation to your symptoms and medical history.</string>
+			<key>Interpretation</key>
+			<string>High values of CEA can indicate:\n\nCancer of the colon, lung, pancreas, breast, or ovary may be present.\n\nCancer may not be responding to treatment.\n\nCancer may have returned after treatment. A steadily rising CEA may be the first sign that cancer has come back after treatment. Also, people with advanced cancer or cancer that has spread to other parts of the body (metastatic cancer) may have high CEA levels if their original cancer produced this protein before treatment.\n\nAnother condition or disease is present, such as cirrhosis, hepatitis, diverticulitis, inflammatory bowel disease, peptic ulcer disease, chronic obstructive pulmonary disease (COPD), inflammation of the gallbladder (cholecystitis), or an obstructed bile duct.</string>
+		</dict>
 		<dict>
 			<key>ProcedureName</key>
 			<string>Carcinoembryonic Antigen (CEA)</string>
@@ -152,9 +187,150 @@
 			<key>Interpretation</key>
 			<string>High values of CEA can indicate:\n\nCancer of the colon, lung, pancreas, breast, or ovary may be present.\n\nCancer may not be responding to treatment.\n\nCancer may have returned after treatment. A steadily rising CEA may be the first sign that cancer has come back after treatment. Also, people with advanced cancer or cancer that has spread to other parts of the body (metastatic cancer) may have high CEA levels if their original cancer produced this protein before treatment.\n\nAnother condition or disease is present, such as cirrhosis, hepatitis, diverticulitis, inflammatory bowel disease, peptic ulcer disease, chronic obstructive pulmonary disease (COPD), inflammation of the gallbladder (cholecystitis), or an obstructed bile duct.</string>
 		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Complete Blood Count (CBC)</string>
+			<key>Information</key>
+			<string>A CBC is a panel of tests that evaluates the three types of cells that circulate in the blood and includes the following:
+
+Evaluation of white blood cells, the cells that are part of the body&apos;s defense system against infections and cancer and also play a role in allergies and inflammation:
+White blood cell (WBC) count is a count of the total number of white blood cells in a person&apos;s sample of blood.
+White blood cell differential may or may not be included as part of the panel of tests. It identifies and counts the number of the various types of white blood cells present. The five types include neutrophils, lymphocytes, monocytes, eosinophils, and basophils.
+Evaluation of red blood cells, the cells that transport oxygen throughout the body:
+Red blood cell (RBC) count is a count of the actual number of red blood cells in a person&apos;s sample of blood.
+Hemoglobin measures the amount of the oxygen-carrying protein in the blood.
+Hematocrit measures the percentage of a person&apos;s blood that consists of red blood cells.
+Red blood cell indices are calculations that provide information on the physical characteristics of the RBCs:
+Mean corpuscular volume (MCV) is a measurement of the average size of RBCs.
+Mean corpuscular hemoglobin (MCH) is a calculation of the average amount of oxygen-carrying hemoglobin inside a red blood cell.
+Mean corpuscular hemoglobin concentration (MCHC) is a calculation of the average percentage of hemoglobin inside a red cell.
+Red cell distribution width (RDW), which may be included in a CBC, is a calculation of the variation in the size of RBCs.
+The CBC may also include reticulocyte count, which is a measurement of the absolute count or percentage of young red blood cells in blood.
+Evaluation of platelets, cell fragments that are vital for normal blood clotting:
+The platelet count is the number of platelets in a person&apos;s sample of blood.
+Mean platelet volume (MPV) may be reported with a CBC. It is a calculation of the average size of platelets.
+Platelet distribution width (PDW) may also be reported with a CBC. It is a measurement of the variation of platelet size.</string>
+			<key>HowTested</key>
+			<string>CBC is tested with a blood sample.</string>
+			<key>Values</key>
+			<string>Normal: Less than 5 nanograms per milliliter\n\nMany conditions can change your CEA levels. Your doctor will discuss any significant abnormal results with you in relation to your symptoms and medical history.</string>
+			<key>Interpretation</key>
+			<string>High values of CEA can indicate:\n\nCancer of the colon, lung, pancreas, breast, or ovary may be present.\n\nCancer may not be responding to treatment.\n\nCancer may have returned after treatment. A steadily rising CEA may be the first sign that cancer has come back after treatment. Also, people with advanced cancer or cancer that has spread to other parts of the body (metastatic cancer) may have high CEA levels if their original cancer produced this protein before treatment.\n\nAnother condition or disease is present, such as cirrhosis, hepatitis, diverticulitis, inflammatory bowel disease, peptic ulcer disease, chronic obstructive pulmonary disease (COPD), inflammation of the gallbladder (cholecystitis), or an obstructed bile duct.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Comprehensive Metabolic Panel (CMP)</string>
+			<key>Information</key>
+			<string>The Comprehensive Metabolic Panel (CMP) is a frequently ordered panel of 14 tests that provides important information about the current status of a person&apos;s kidneys and liver, electrolyte and acid/base balance as well as levels of blood glucose and blood proteins. The CMP includes the following tests:
+
+Glucose - Energy source for the body; a steady supply must be available for use, and a relatively constant level of glucose must be maintained in the blood.
+Calcium - One of the most important minerals in the body; essential for the proper functioning of muscles, nerves, and the heart and is required in blood clotting and in the formation of bones
+Proteins
+
+Albumin - A small protein produced in the liver; the major protein in serum
+Total Protein - Measures albumin as well as all other proteins in serum
+Electrolytes
+
+Sodium - Vital to normal body processes, including nerve and muscle function
+Potassium - Vital to cell metabolism and muscle function
+CO2 (carbon dioxide, bicarbonate) - Helps to maintain the body&apos;s acid-base balance (pH)
+Chloride - Helps to regulate the amount of fluid in the body and maintain the acid-base balance
+Kidney Tests
+
+BUN (blood urea nitrogen) - Waste product filtered out of the blood by the kidneys; conditions that affect the kidney have the potential to affect the amount of urea in the blood.
+Creatinine - Waste product produced in the muscles; filtered out of the blood by the kidneys so blood levels are a good indication of how well the kidneys are working
+Liver Tests
+
+ALP (alkaline phosphatase) - Enzyme found in the liver and other tissues, bone; elevated levels of ALP in the blood are most commonly caused by liver disease or bone disorders.
+ALT (alanine amino transferase, also called SGPT) - Enzyme found mostly in the cells of the liver and kidney; a useful test for detecting liver damage
+AST (aspartate amino transferase, also called SGOT) - Enzyme found especially in cells in the heart and liver; also a useful test for detecting liver damage
+Bilirubin - Waste product produced by the liver as it breaks down and recycles aged red blood cell</string>
+			<key>HowTested</key>
+			<string>CMP is tested with a blood sample.</string>
+			<key>Values</key>
+			<string>Normal: Less than 5 nanograms per milliliter\n\nMany conditions can change your CEA levels. Your doctor will discuss any significant abnormal results with you in relation to your symptoms and medical history.</string>
+			<key>Interpretation</key>
+			<string>High values of CEA can indicate:\n\nCancer of the colon, lung, pancreas, breast, or ovary may be present.\n\nCancer may not be responding to treatment.\n\nCancer may have returned after treatment. A steadily rising CEA may be the first sign that cancer has come back after treatment. Also, people with advanced cancer or cancer that has spread to other parts of the body (metastatic cancer) may have high CEA levels if their original cancer produced this protein before treatment.\n\nAnother condition or disease is present, such as cirrhosis, hepatitis, diverticulitis, inflammatory bowel disease, peptic ulcer disease, chronic obstructive pulmonary disease (COPD), inflammation of the gallbladder (cholecystitis), or an obstructed bile duct.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Cytokeratin Fragments 21-1</string>
+			<key>Information</key>
+			<string>CYFRA 21-1 is the most sensitive tumor marker for non-small cell lung cancer, particularly squamous cell tumors. This marker is also elevated in urological, gastrointestinal and gynaecological cancers and in lower amounts in various benign diseases, limiting its use in diagnosis. However, its measurement may be helpful in the differential diagnosis of suspicious lung masses, particularly if biopsy is not possible. </string>
+			<key>HowTested</key>
+			<string>CYFRA 21-1 is tested with a blood sample.</string>
+			<key>Values</key>
+			<string>Normal: Less than 5 nanograms per milliliter\n\nMany conditions can change your CEA levels. Your doctor will discuss any significant abnormal results with you in relation to your symptoms and medical history.</string>
+			<key>Interpretation</key>
+			<string>High values of CEA can indicate:\n\nCancer of the colon, lung, pancreas, breast, or ovary may be present.\n\nCancer may not be responding to treatment.\n\nCancer may have returned after treatment. A steadily rising CEA may be the first sign that cancer has come back after treatment. Also, people with advanced cancer or cancer that has spread to other parts of the body (metastatic cancer) may have high CEA levels if their original cancer produced this protein before treatment.\n\nAnother condition or disease is present, such as cirrhosis, hepatitis, diverticulitis, inflammatory bowel disease, peptic ulcer disease, chronic obstructive pulmonary disease (COPD), inflammation of the gallbladder (cholecystitis), or an obstructed bile duct.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>EGRF</string>
+			<key>Information</key>
+			<string>This protein, also known as HER1, is a receptor found on cells that helps them grow. Tests done on a piece of the cancer tissue can look for increased amounts of these receptors, which is a sign that the cancer may grow fast, spread quickly, and be harder to treat. Patients with elevated EGFR may have poorer outcomes and need more aggressive treatment, particularly with drugs that block (or inhibit) the EGFR receptors. EGFR may be used to guide treatment and predict outcomes of non-small cell lung, head and neck, colon, pancreas, or breast cancers. The results are reported as a percentage based on the number of cells tested. Some lung cancers have certain defects (mutations) in the EGFR gene that make it more likely that certain drugs will work against the cancer. These gene changes are more common in lung cancer patients who are women, non-smokers, or Asian.</string>
+			<key>HowTested</key>
+			<string>EGRF is tested with a blood sample.</string>
+			<key>Values</key>
+			<string>Normal: Less than 5 nanograms per milliliter\n\nMany conditions can change your CEA levels. Your doctor will discuss any significant abnormal results with you in relation to your symptoms and medical history.</string>
+			<key>Interpretation</key>
+			<string>High values of CEA can indicate:\n\nCancer of the colon, lung, pancreas, breast, or ovary may be present.\n\nCancer may not be responding to treatment.\n\nCancer may have returned after treatment. A steadily rising CEA may be the first sign that cancer has come back after treatment. Also, people with advanced cancer or cancer that has spread to other parts of the body (metastatic cancer) may have high CEA levels if their original cancer produced this protein before treatment.\n\nAnother condition or disease is present, such as cirrhosis, hepatitis, diverticulitis, inflammatory bowel disease, peptic ulcer disease, chronic obstructive pulmonary disease (COPD), inflammation of the gallbladder (cholecystitis), or an obstructed bile duct.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Neuron Specific Enolase (NSE)</string>
+			<key>Information</key>
+			<string>suggest the presence of SCLC with high probability, with the differential diagnoses including neuroendocrine tumors of other localisations, liver cancer, lymphoma and seminoma. Moderate elevations of NSE are also found in patients with benign lung diseases as well as in some pancreatic, gastric, colorectal and breast cancers. Several groups have reported improved diagnostic discrimination when NSE is combined with measurement of prograstrin releasing peptide (ProGRP). </string>
+			<key>HowTested</key>
+			<string>NSE is tested with a blood sample.</string>
+			<key>Values</key>
+			<string>Normal: Less than 5 nanograms per milliliter\n\nMany conditions can change your CEA levels. Your doctor will discuss any significant abnormal results with you in relation to your symptoms and medical history.</string>
+			<key>Interpretation</key>
+			<string>High values of CEA can indicate:\n\nCancer of the colon, lung, pancreas, breast, or ovary may be present.\n\nCancer may not be responding to treatment.\n\nCancer may have returned after treatment. A steadily rising CEA may be the first sign that cancer has come back after treatment. Also, people with advanced cancer or cancer that has spread to other parts of the body (metastatic cancer) may have high CEA levels if their original cancer produced this protein before treatment.\n\nAnother condition or disease is present, such as cirrhosis, hepatitis, diverticulitis, inflammatory bowel disease, peptic ulcer disease, chronic obstructive pulmonary disease (COPD), inflammation of the gallbladder (cholecystitis), or an obstructed bile duct.</string>
+		</dict>
 	</array>
 	<key>Surgery</key>
 	<array>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Broncoscopy</string>
+			<key>Information</key>
+			<string>A Broncoscopy is a procedure where a camera is placed through the mouth, into the wind pipe, and subsequently into the small airways of the lungs to look inside the lung for masses, as well as to take biopsies or pieces of tissue from the lung to be evaluated for cancer.</string>
+			<key>Preparation</key>
+			<string>The night before surgery, your doctor will recommend that you “fast” – that is, not eat or drink anything (even water) for at least 8 hours.  On the morning of your surgery, a nurse will ask you several questions and place an IV (intravenous line) in your arm. She will also fit you with monitors so that your blood pressure, heart rate, and oxygen levels can be monitored throughout surgery. Your surgeon will visit to again discuss the procedure and ask you to sign a consent form. The anesthesiologist will also visit to talk about the anesthesia you will be given, and ask about any problems you or your family members have experienced with anesthesia in the past. The operating room staff will guide your family to a waiting area, where the surgical staff can keep them updated on your progress and speak with them when your surgery is done.</string>
+			<key>Recovery</key>
+			<string>None. Generally after recovering from anesthesia, patients require little to no recovery time.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Lobectomy</string>
+			<key>Information</key>
+			<string>A lobectomy involves the removal of one lobe of the lung. This is done if the surgeon believes the cancer is isolated in one lobe of the right or left lung.</string>
+			<key>Preparation</key>
+			<string>The night before surgery, your doctor will recommend that you “fast” – that is, not eat or drink anything (even water) for at least 8 hours.  On the morning of your surgery, a nurse will ask you several questions and place an IV (intravenous line) in your arm. She will also fit you with monitors so that your blood pressure, heart rate, and oxygen levels can be monitored throughout surgery. Your surgeon will visit to again discuss the procedure and ask you to sign a consent form. The anesthesiologist will also visit to talk about the anesthesia you will be given, and ask about any problems you or your family members have experienced with anesthesia in the past. The operating room staff will guide your family to a waiting area, where the surgical staff can keep them updated on your progress and speak with them when your surgery is done.</string>
+			<key>Recovery</key>
+			<string>If the procedure is done through a large incision in the chest called a thoracotomy, patients generally require 5 to 7 days in the hospital after surgery. Addiitionally, patients can experience pain for 1-2 months following the procedure. If the procedure is completed using video-assisted thoracic surgery, VATS, small incisions are made where a camera and tools can be inserted. This procedure usually requires a 4 to 5 day hospital stay with significantly less pain post-operatively in most patients. VATs procedures are used for early stage tumors near the outside of the lung.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Lung Needle Biopsy</string>
+			<key>Information</key>
+			<string>A lung needle biopsy is a procedure where the doctor uses a needle to take a small amount of tissue from a mass seen on imaging studies. During the procedure, the patient is awake but has been numbed with locally-acting medication in the area where the biospy needle will enter. Samples that are recovered from the biopsy are evaluated for cancer by a pathologist. This procedure typically lasts 30 to 60 minutes. </string>
+			<key>Preparation</key>
+			<string>The night before surgery, your doctor will recommend that you “fast” – that is, not eat or drink anything (even water) for at least 8 hours.  On the morning of your surgery, a nurse will ask you several questions and place an IV (intravenous line) in your arm. She will also fit you with monitors so that your blood pressure, heart rate, and oxygen levels can be monitored throughout surgery. Your surgeon will visit to again discuss the procedure and ask you to sign a consent form. The anesthesiologist will also visit to talk about the anesthesia you will be given, and ask about any problems you or your family members have experienced with anesthesia in the past. The operating room staff will guide your family to a waiting area, where the surgical staff can keep them updated on your progress and speak with them when your surgery is done.</string>
+			<key>Recovery</key>
+			<string>None. Generally after recovering from anesthesia, patients require little to no recovery time.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Lymphadenectomy</string>
+			<key>Information</key>
+			<string>A lymphadenectomy is a surgery done to remove cancerous lymph nodes or to accurately stage a cancer. Most commonly the mediastinal lymph nodes are removed and then evaluated by a pathologist using special microscopic techniques to look for cancer.</string>
+			<key>Preparation</key>
+			<string>The night before surgery, your doctor will recommend that you “fast” – that is, not eat or drink anything (even water) for at least 8 hours.  On the morning of your surgery, a nurse will ask you several questions and place an IV (intravenous line) in your arm. She will also fit you with monitors so that your blood pressure, heart rate, and oxygen levels can be monitored throughout surgery. Your surgeon will visit to again discuss the procedure and ask you to sign a consent form. The anesthesiologist will also visit to talk about the anesthesia you will be given, and ask about any problems you or your family members have experienced with anesthesia in the past. The operating room staff will guide your family to a waiting area, where the surgical staff can keep them updated on your progress and speak with them when your surgery is done.</string>
+			<key>Recovery</key>
+			<string>Usually a lymphadenectomy requires a 5-7 day hospital stay and additionally patients require pain treatment for several months following the procedure.</string>
+		</dict>
 		<dict>
 			<key>ProcedureName</key>
 			<string>Pneumonectomy</string>
@@ -164,6 +340,16 @@
 			<string>The night before surgery, your doctor will recommend that you “fast” – that is, not eat or drink anything (even water) for at least 8 hours.  On the morning of your surgery, a nurse will ask you several questions and place an IV (intravenous line) in your arm. She will also fit you with monitors so that your blood pressure, heart rate, and oxygen levels can be monitored throughout surgery. Your surgeon will visit to again discuss the procedure and ask you to sign a consent form. The anesthesiologist will also visit to talk about the anesthesia you will be given, and ask about any problems you or your family members have experienced with anesthesia in the past. The operating room staff will guide your family to a waiting area, where the surgical staff can keep them updated on your progress and speak with them when your surgery is done.</string>
 			<key>Recovery</key>
 			<string>When your surgery is complete, you will be taken to the recovery room where you will monitored closely for several hours. In some cases, you may be taken directly to the intensive care unit (ICU). Following recovery, most people spend the first several days in the ICU. For the first day, your breathing may be assisted with a ventilator. Since this can cause some anxiety, you will be given medications that keep you very drowsy until the tube is removed.  When the ventilator is removed and you become less sleepy, a respiratory therapist will ask you to cough, and will assist you in the use of an incentive spirometer. This is a device that you breathe into in order to exercise your lungs, and to help keep the small air sacs in your lungs open.  When you are able, the nursing staff will help you sit, and then encourage you to get up and walk with assistance. You may not feel like being active, but increasing your activity will help you regain your strength more quickly, and reduces the risk of developing blood clots. Most people spend at least 6 to 10 days in the hospital following surgery.  Some people return to work after 8 weeks, but your doctor will give you special restrictions, such as avoiding any heavy lifting. It will also take time for your remaining lung to take over, and shortness of breath may persist for several months following surgery.</string>
+		</dict>
+		<dict>
+			<key>ProcedureName</key>
+			<string>Segmentectomy</string>
+			<key>Information</key>
+			<string>A segmentectomy involves removal of a small area of the lung along the veins, arteries, or airways. This procedure is performed when the cancer is diagnosed early and is only in a very small area.</string>
+			<key>Preparation</key>
+			<string>The night before surgery, your doctor will recommend that you “fast” – that is, not eat or drink anything (even water) for at least 8 hours.  On the morning of your surgery, a nurse will ask you several questions and place an IV (intravenous line) in your arm. She will also fit you with monitors so that your blood pressure, heart rate, and oxygen levels can be monitored throughout surgery. Your surgeon will visit to again discuss the procedure and ask you to sign a consent form. The anesthesiologist will also visit to talk about the anesthesia you will be given, and ask about any problems you or your family members have experienced with anesthesia in the past. The operating room staff will guide your family to a waiting area, where the surgical staff can keep them updated on your progress and speak with them when your surgery is done.</string>
+			<key>Recovery</key>
+			<string>Usually a segmentectomy requires a 5-7 day hospital stay and additionally patients require pain treatment for several months following the procedure.</string>
 		</dict>
 	</array>
 </dict>

@@ -26,7 +26,7 @@
     
     if (self) {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Medications" image:[UIImage imageNamed:@"pill_icon.png"] tag:2];
-        self.navigationItem.title = @"My Medications";
+        self.navigationItem.title = @"Medications";
         self.tableView.backgroundColor = [UIColor colorWithRed:0xF7/255.0f green:0xF7/255.0f blue:0xF7/255.0f alpha:1.0f];
         
         UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addMedication)];
@@ -95,6 +95,7 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.font = [UIFont mediumApplicationFontOfSize:16.0f];
         cell.detailTextLabel.font = [UIFont applicationFontOfSize:14.0f];
         cell.detailTextLabel.textColor = [UIColor darkGrayColor];

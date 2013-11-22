@@ -57,8 +57,12 @@
 		0E94E5941833309D00C0434E /* SORelativeDateTransformer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E94E5911833309D00C0434E /* SORelativeDateTransformer.bundle */; };
 		0E94E5951833309D00C0434E /* SORelativeDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E94E5931833309D00C0434E /* SORelativeDateTransformer.m */; };
 		0E94E59B1833375800C0434E /* surgery_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E94E59A1833375800C0434E /* surgery_icon@2x.png */; };
+		0EA79FE1183FD97600304028 /* imaging_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA79FDF183FD97600304028 /* imaging_icon@2x.png */; };
+		0EA79FE2183FD97600304028 /* radiation_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EA79FE0183FD97600304028 /* radiation_icon@2x.png */; };
+		0EA79FE4183FD98F00304028 /* TreatmentData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EA79FE3183FD98F00304028 /* TreatmentData.plist */; };
+		0EA79FE7183FD9E100304028 /* RadiationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA79FE6183FD9E100304028 /* RadiationEvent.m */; };
+		0EA79FEA183FDB5800304028 /* ImagingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA79FE9183FDB5800304028 /* ImagingEvent.m */; };
 		0EB76D5E1835D02900336ACF /* hamburger_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB76D5C1835D02900336ACF /* hamburger_button@2x.png */; };
-		0EBA529E1835CA040063740D /* TreatmentData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EBA529D1835CA040063740D /* TreatmentData.plist */; };
 		0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */; };
 		0ECC470E1835A20F00E1AEDD /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC470B1835A20F00E1AEDD /* PopoverView.m */; };
 		0EFCCB87182E208600A89CBC /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCCB86182E208600A89CBC /* EventsViewController.m */; };
@@ -76,20 +80,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E08DF20182DD96A004CF9E4 /* MedAppJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedAppJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E08DF20182DD96A004CF9E4 /* ChemoCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemoCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E08DF23182DD96A004CF9E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E08DF25182DD96A004CF9E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0E08DF27182DD96A004CF9E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		0E08DF2B182DD96A004CF9E4 /* MedAppJam-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MedAppJam-Info.plist"; sourceTree = "<group>"; };
+		0E08DF2B182DD96A004CF9E4 /* ChemoCare-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChemoCare-Info.plist"; sourceTree = "<group>"; };
 		0E08DF2D182DD96A004CF9E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0E08DF2F182DD96A004CF9E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0E08DF31182DD96A004CF9E4 /* MedAppJam-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MedAppJam-Prefix.pch"; sourceTree = "<group>"; };
+		0E08DF31182DD96A004CF9E4 /* ChemoCare-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChemoCare-Prefix.pch"; sourceTree = "<group>"; };
 		0E08DF32182DD96A004CF9E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E08DF33182DD96A004CF9E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0E08DF3B182DD96A004CF9E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0E08DF41182DD96A004CF9E4 /* MedAppJamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedAppJamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E08DF41182DD96A004CF9E4 /* ChemoCareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChemoCareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E08DF42182DD96A004CF9E4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		0E08DF4A182DD96B004CF9E4 /* MedAppJamTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MedAppJamTests-Info.plist"; sourceTree = "<group>"; };
+		0E08DF4A182DD96B004CF9E4 /* ChemoCareTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChemoCareTests-Info.plist"; sourceTree = "<group>"; };
 		0E08DF4C182DD96B004CF9E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0E08DF4E182DD96B004CF9E4 /* MedAppJamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MedAppJamTests.m; sourceTree = "<group>"; };
 		0E150716183D4ED500F21A1D /* DiagnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiagnosisViewController.h; path = "View Controllers/DiagnosisViewController.h"; sourceTree = "<group>"; };
@@ -168,8 +172,14 @@
 		0E94E5921833309D00C0434E /* SORelativeDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SORelativeDateTransformer.h; sourceTree = "<group>"; };
 		0E94E5931833309D00C0434E /* SORelativeDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SORelativeDateTransformer.m; sourceTree = "<group>"; };
 		0E94E59A1833375800C0434E /* surgery_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surgery_icon@2x.png"; sourceTree = "<group>"; };
+		0EA79FDF183FD97600304028 /* imaging_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imaging_icon@2x.png"; sourceTree = "<group>"; };
+		0EA79FE0183FD97600304028 /* radiation_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radiation_icon@2x.png"; sourceTree = "<group>"; };
+		0EA79FE3183FD98F00304028 /* TreatmentData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TreatmentData.plist; sourceTree = "<group>"; };
+		0EA79FE5183FD9E000304028 /* RadiationEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadiationEvent.h; path = Classes/RadiationEvent.h; sourceTree = "<group>"; };
+		0EA79FE6183FD9E100304028 /* RadiationEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadiationEvent.m; path = Classes/RadiationEvent.m; sourceTree = "<group>"; };
+		0EA79FE8183FDB5800304028 /* ImagingEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagingEvent.h; path = Classes/ImagingEvent.h; sourceTree = "<group>"; };
+		0EA79FE9183FDB5800304028 /* ImagingEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagingEvent.m; path = Classes/ImagingEvent.m; sourceTree = "<group>"; };
 		0EB76D5C1835D02900336ACF /* hamburger_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hamburger_button@2x.png"; sourceTree = "<group>"; };
-		0EBA529D1835CA040063740D /* TreatmentData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TreatmentData.plist; path = MedAppJam/TreatmentData.plist; sourceTree = "<group>"; };
 		0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chemo_icon@2x.png"; sourceTree = "<group>"; };
 		0ECC470A1835A20F00E1AEDD /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
 		0ECC470B1835A20F00E1AEDD /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
@@ -216,7 +226,6 @@
 		0E08DF17182DD96A004CF9E4 = {
 			isa = PBXGroup;
 			children = (
-				0EBA529D1835CA040063740D /* TreatmentData.plist */,
 				0E08DF29182DD96A004CF9E4 /* MedAppJam */,
 				0E94E597183330B500C0434E /* Vendor */,
 				0E08DF48182DD96B004CF9E4 /* MedAppJamTests */,
@@ -228,8 +237,8 @@
 		0E08DF21182DD96A004CF9E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E08DF20182DD96A004CF9E4 /* MedAppJam.app */,
-				0E08DF41182DD96A004CF9E4 /* MedAppJamTests.xctest */,
+				0E08DF20182DD96A004CF9E4 /* ChemoCare.app */,
+				0E08DF41182DD96A004CF9E4 /* ChemoCareTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,6 +264,7 @@
 		0E08DF29182DD96A004CF9E4 /* MedAppJam */ = {
 			isa = PBXGroup;
 			children = (
+				0EA79FE3183FD98F00304028 /* TreatmentData.plist */,
 				0E08DF32182DD96A004CF9E4 /* AppDelegate.h */,
 				0E08DF33182DD96A004CF9E4 /* AppDelegate.m */,
 				0E50CE331833585500892C1B /* View Controllers */,
@@ -271,10 +281,10 @@
 		0E08DF2A182DD96A004CF9E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0E08DF2B182DD96A004CF9E4 /* MedAppJam-Info.plist */,
+				0E08DF2B182DD96A004CF9E4 /* ChemoCare-Info.plist */,
 				0E08DF2C182DD96A004CF9E4 /* InfoPlist.strings */,
 				0E08DF2F182DD96A004CF9E4 /* main.m */,
-				0E08DF31182DD96A004CF9E4 /* MedAppJam-Prefix.pch */,
+				0E08DF31182DD96A004CF9E4 /* ChemoCare-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -291,7 +301,7 @@
 		0E08DF49182DD96B004CF9E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0E08DF4A182DD96B004CF9E4 /* MedAppJamTests-Info.plist */,
+				0E08DF4A182DD96B004CF9E4 /* ChemoCareTests-Info.plist */,
 				0E08DF4B182DD96B004CF9E4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -354,6 +364,8 @@
 				0ECC470718358EC000E1AEDD /* chemo_icon@2x.png */,
 				0E94E58B18330EB700C0434E /* lab_test_icon@2x.png */,
 				0E94E59A1833375800C0434E /* surgery_icon@2x.png */,
+				0EA79FDF183FD97600304028 /* imaging_icon@2x.png */,
+				0EA79FE0183FD97600304028 /* radiation_icon@2x.png */,
 				0E94E58D183311AE00C0434E /* location@2x.png */,
 			);
 			name = Images;
@@ -387,6 +399,10 @@
 				0E9466DB182F0EC200F28FFE /* ChemoEvent.m */,
 				0E9466DD182F115200F28FFE /* LabTestEvent.h */,
 				0E9466DE182F115200F28FFE /* LabTestEvent.m */,
+				0EA79FE5183FD9E000304028 /* RadiationEvent.h */,
+				0EA79FE6183FD9E100304028 /* RadiationEvent.m */,
+				0EA79FE8183FDB5800304028 /* ImagingEvent.h */,
+				0EA79FE9183FDB5800304028 /* ImagingEvent.m */,
 				0E9466E8182F6C0E00F28FFE /* SurgeryEvent.h */,
 				0E9466E9182F6C0E00F28FFE /* SurgeryEvent.m */,
 			);
@@ -501,9 +517,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0E08DF1F182DD96A004CF9E4 /* MedAppJam */ = {
+		0E08DF1F182DD96A004CF9E4 /* ChemoCare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E08DF52182DD96B004CF9E4 /* Build configuration list for PBXNativeTarget "MedAppJam" */;
+			buildConfigurationList = 0E08DF52182DD96B004CF9E4 /* Build configuration list for PBXNativeTarget "ChemoCare" */;
 			buildPhases = (
 				0E08DF1C182DD96A004CF9E4 /* Sources */,
 				0E08DF1D182DD96A004CF9E4 /* Frameworks */,
@@ -513,14 +529,14 @@
 			);
 			dependencies = (
 			);
-			name = MedAppJam;
+			name = ChemoCare;
 			productName = MedAppJam;
-			productReference = 0E08DF20182DD96A004CF9E4 /* MedAppJam.app */;
+			productReference = 0E08DF20182DD96A004CF9E4 /* ChemoCare.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0E08DF40182DD96A004CF9E4 /* MedAppJamTests */ = {
+		0E08DF40182DD96A004CF9E4 /* ChemoCareTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E08DF55182DD96B004CF9E4 /* Build configuration list for PBXNativeTarget "MedAppJamTests" */;
+			buildConfigurationList = 0E08DF55182DD96B004CF9E4 /* Build configuration list for PBXNativeTarget "ChemoCareTests" */;
 			buildPhases = (
 				0E08DF3D182DD96A004CF9E4 /* Sources */,
 				0E08DF3E182DD96A004CF9E4 /* Frameworks */,
@@ -531,9 +547,9 @@
 			dependencies = (
 				0E08DF47182DD96B004CF9E4 /* PBXTargetDependency */,
 			);
-			name = MedAppJamTests;
+			name = ChemoCareTests;
 			productName = MedAppJamTests;
-			productReference = 0E08DF41182DD96A004CF9E4 /* MedAppJamTests.xctest */;
+			productReference = 0E08DF41182DD96A004CF9E4 /* ChemoCareTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -553,7 +569,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0E08DF1B182DD96A004CF9E4 /* Build configuration list for PBXProject "MedAppJam" */;
+			buildConfigurationList = 0E08DF1B182DD96A004CF9E4 /* Build configuration list for PBXProject "ChemoCare" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -566,8 +582,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0E08DF1F182DD96A004CF9E4 /* MedAppJam */,
-				0E08DF40182DD96A004CF9E4 /* MedAppJamTests */,
+				0E08DF1F182DD96A004CF9E4 /* ChemoCare */,
+				0E08DF40182DD96A004CF9E4 /* ChemoCareTests */,
 			);
 		};
 /* End PBXProject section */
@@ -578,16 +594,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB76D5E1835D02900336ACF /* hamburger_button@2x.png in Resources */,
+				0EA79FE2183FD97600304028 /* radiation_icon@2x.png in Resources */,
 				0E94E58F183311AE00C0434E /* location@2x.png in Resources */,
 				0E94E59B1833375800C0434E /* surgery_icon@2x.png in Resources */,
 				0E94E5941833309D00C0434E /* SORelativeDateTransformer.bundle in Resources */,
 				0ECC470818358EC000E1AEDD /* chemo_icon@2x.png in Resources */,
 				0E94E58C18330EB700C0434E /* lab_test_icon@2x.png in Resources */,
 				0E94E5781833057C00C0434E /* zbar-helpicons.png in Resources */,
-				0EBA529E1835CA040063740D /* TreatmentData.plist in Resources */,
 				0E15071C183D573700F21A1D /* stethoscope_icon@2x.png in Resources */,
 				0E08DF3C182DD96A004CF9E4 /* Images.xcassets in Resources */,
 				0E94E5791833057C00C0434E /* zbar-samples.png in Resources */,
+				0EA79FE1183FD97600304028 /* imaging_icon@2x.png in Resources */,
 				0E35ACBE183860D60008FC66 /* SVProgressHUD.bundle in Resources */,
 				0E15071E183D6C2D00F21A1D /* camera_icon@2x.png in Resources */,
 				0E94E5761833057C00C0434E /* zbar-back.png in Resources */,
@@ -595,6 +612,7 @@
 				0E15071A183D56D000F21A1D /* calendar_icon@2x.png in Resources */,
 				0E08DF2E182DD96A004CF9E4 /* InfoPlist.strings in Resources */,
 				0E150723183DE06200F21A1D /* pill_icon@2x.png in Resources */,
+				0EA79FE4183FD98F00304028 /* TreatmentData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +638,7 @@
 				0EFCCB8A182E212500A89CBC /* EventCell.m in Sources */,
 				0E50CE4318340FE800892C1B /* PinAnnotation.m in Sources */,
 				0E50CE32183352C400892C1B /* CodeReaderViewController.m in Sources */,
+				0EA79FEA183FDB5800304028 /* ImagingEvent.m in Sources */,
 				0E35ACBF183860D60008FC66 /* SVProgressHUD.m in Sources */,
 				0E94E5951833309D00C0434E /* SORelativeDateTransformer.m in Sources */,
 				0E150726183E006200F21A1D /* Medication.m in Sources */,
@@ -630,6 +649,7 @@
 				0EFCCB87182E208600A89CBC /* EventsViewController.m in Sources */,
 				0E150721183DBD6F00F21A1D /* MedicationsViewController.m in Sources */,
 				0E9466D9182F0DEE00F28FFE /* Event.m in Sources */,
+				0EA79FE7183FD9E100304028 /* RadiationEvent.m in Sources */,
 				0E08DF34182DD96A004CF9E4 /* AppDelegate.m in Sources */,
 				0E50CE37183366CC00892C1B /* EventViewController.m in Sources */,
 				0E9466EA182F6C0E00F28FFE /* SurgeryEvent.m in Sources */,
@@ -651,7 +671,7 @@
 /* Begin PBXTargetDependency section */
 		0E08DF47182DD96B004CF9E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0E08DF1F182DD96A004CF9E4 /* MedAppJam */;
+			target = 0E08DF1F182DD96A004CF9E4 /* ChemoCare */;
 			targetProxy = 0E08DF46182DD96B004CF9E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -757,14 +777,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MedAppJam/MedAppJam-Prefix.pch";
-				INFOPLIST_FILE = "MedAppJam/MedAppJam-Info.plist";
+				GCC_PREFIX_HEADER = "MedAppJam/ChemoCare-Prefix.pch";
+				INFOPLIST_FILE = "MedAppJam/ChemoCare-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ny/Development/MedAppJam/ZBarSDK,
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ChemoCare;
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -780,14 +800,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MedAppJam/MedAppJam-Prefix.pch";
-				INFOPLIST_FILE = "MedAppJam/MedAppJam-Info.plist";
+				GCC_PREFIX_HEADER = "MedAppJam/ChemoCare-Prefix.pch";
+				INFOPLIST_FILE = "MedAppJam/ChemoCare-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ny/Development/MedAppJam/ZBarSDK,
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ChemoCare;
 				PROVISIONING_PROFILE = "";
 				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -810,8 +830,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "MedAppJamTests/MedAppJamTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MedAppJamTests/ChemoCareTests-Info.plist";
+				PRODUCT_NAME = ChemoCareTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -829,8 +849,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MedAppJam/MedAppJam-Prefix.pch";
-				INFOPLIST_FILE = "MedAppJamTests/MedAppJamTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MedAppJamTests/ChemoCareTests-Info.plist";
+				PRODUCT_NAME = ChemoCareTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -839,7 +859,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0E08DF1B182DD96A004CF9E4 /* Build configuration list for PBXProject "MedAppJam" */ = {
+		0E08DF1B182DD96A004CF9E4 /* Build configuration list for PBXProject "ChemoCare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E08DF50182DD96B004CF9E4 /* Debug */,
@@ -848,7 +868,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E08DF52182DD96B004CF9E4 /* Build configuration list for PBXNativeTarget "MedAppJam" */ = {
+		0E08DF52182DD96B004CF9E4 /* Build configuration list for PBXNativeTarget "ChemoCare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E08DF53182DD96B004CF9E4 /* Debug */,
@@ -857,7 +877,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E08DF55182DD96B004CF9E4 /* Build configuration list for PBXNativeTarget "MedAppJamTests" */ = {
+		0E08DF55182DD96B004CF9E4 /* Build configuration list for PBXNativeTarget "ChemoCareTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E08DF56182DD96B004CF9E4 /* Debug */,
